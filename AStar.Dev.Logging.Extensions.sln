@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2148A5BF-30D5-460A-BE18-C19426C87428}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{5956040C-7B01-422A-BA94-58CB8F1951C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Logging.Extensions.Unit.Tests", "tests\unit\AStar.Dev.Logging.Extensions.Unit.Tests\AStar.Dev.Logging.Extensions.Unit.Tests.csproj", "{61823C1A-5AA5-4C23-944A-F1029941086C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BB29ADA9-37FE-434B-BF05-2E195E7C83A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Logging.Extensions", "src\AStar.Dev.Logging.Extensions\AStar.Dev.Logging.Extensions.csproj", "{9F2D808F-D24F-4031-9C2D-7744B32E15FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61823C1A-5AA5-4C23-944A-F1029941086C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61823C1A-5AA5-4C23-944A-F1029941086C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61823C1A-5AA5-4C23-944A-F1029941086C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61823C1A-5AA5-4C23-944A-F1029941086C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2D808F-D24F-4031-9C2D-7744B32E15FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2D808F-D24F-4031-9C2D-7744B32E15FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2D808F-D24F-4031-9C2D-7744B32E15FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2D808F-D24F-4031-9C2D-7744B32E15FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5956040C-7B01-422A-BA94-58CB8F1951C6} = {2148A5BF-30D5-460A-BE18-C19426C87428}
+		{61823C1A-5AA5-4C23-944A-F1029941086C} = {5956040C-7B01-422A-BA94-58CB8F1951C6}
+		{9F2D808F-D24F-4031-9C2D-7744B32E15FC} = {BB29ADA9-37FE-434B-BF05-2E195E7C83A2}
+	EndGlobalSection
+EndGlobal
