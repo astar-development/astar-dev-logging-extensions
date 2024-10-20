@@ -1,10 +1,6 @@
-﻿using System.Reflection;
-using AStar.Dev.Logging.Extensions.Models;
+﻿using AStar.Dev.Logging.Extensions.Models;
 using AStar.Dev.Utilities;
 using Microsoft.AspNetCore.Builder;
-using Serilog.Core;
-using Serilog.Events;
-using Serilog;
 
 namespace AStar.Dev.Logging.Extensions.Unit.Tests;
 
