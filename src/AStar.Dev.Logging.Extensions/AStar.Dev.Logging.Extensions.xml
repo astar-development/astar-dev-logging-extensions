@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AStar.Dev.Logging.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:AStar.Dev.Logging.Extensions.LoggingExtensions">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.LoggingExtensions" /> class contains, as you might expect, extension methods for configuring Serilog / Application Insights.
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.LoggingExtensions.AddSerilogLogging(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String)">
+            <summary>
+            The <see cref="M:AStar.Dev.Logging.Extensions.LoggingExtensions.AddSerilogLogging(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String)" /> method will add Serilog to the logging providers.
+            </summary>
+            <param name="builder">
+            </param>
+            <param name="externalSettingsFile">
+            The name (including extension) of the file containing the Serilog Configuration settings.
+            </param>
+            <returns>
+            The original instance of <see cref="T:Microsoft.AspNetCore.Builder.WebApplicationBuilder" /> for further method chaining.
+            </returns>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.ApplicationInsights">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.ApplicationInsights" /> class which is used to configure the logging.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.ApplicationInsights.LogLevel">
+            <summary>
+            The Log level to use.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.Args">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.Args" /> class used by Serilog WriteTo section of the logging configuration.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Args.ServerUrl">
+            <summary>
+            The Serilog server Url.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.Console">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.Console" /> class used by Serilog Console section of the logging configuration.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Console.FormatterName">
+            <summary>
+            The Formatter Name to use.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Console.FormatterOptions">
+            <summary>
+            The <see cref="P:AStar.Dev.Logging.Extensions.Models.Console.FormatterOptions" /> class used to supply the Formatter Options to use.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.FormatterOptions">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.FormatterOptions" /> class used by the Serilog Console logger.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.SingleLine">
+            <summary>
+            Whether to use a single line for the logging.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.IncludeScopes">
+            <summary>
+            Whether to include the Scopes for the logging.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.TimestampFormat">
+            <summary>
+            The Timestamp Format to use. Defaults to "HH:mm:ss "
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.UseUtcTimestamp">
+            <summary>
+            Whether to use a UTC Timestamp or not. The default is <see langword="true" />.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.JsonWriterOptions">
+            <summary>
+            The <see cref="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.JsonWriterOptions" /> used to configure the JSON Writer.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.JsonWriterOptions">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.JsonWriterOptions" /> class containing the configuration options.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.JsonWriterOptions.Indented">
+            <summary>
+            Whether to use indented JSON or not. The default is <see langword="false" />.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.Logging">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.Logging" /> class used to configure the standard logging.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Logging.Console">
+            <summary>
+            An instance of <see cref="P:AStar.Dev.Logging.Extensions.Models.Logging.Console" /> class used to configure the Console logger.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Logging.ApplicationInsights">
+            <summary>
+            An instance of <see cref="P:AStar.Dev.Logging.Extensions.Models.Logging.ApplicationInsights" /> class used to configure the Application Insights logger.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.LogLevel">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.LogLevel" /> class used to configure Application Insights.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.LogLevel.Default">
+            <summary>
+            The default logging level.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.LogLevel.MicrosoftAspNetCore">
+            <summary>
+            The Microsoft AspNetCore logging level.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.LogLevel.AStar">
+            <summary>
+            The AStar-specific logging level.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.MinimumLevel">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.MinimumLevel" /> class used to configure Serilog.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.MinimumLevel.Default">
+            <summary>
+            The default logging level.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.MinimumLevel.Override">
+            <summary>
+            The <see cref="P:AStar.Dev.Logging.Extensions.Models.MinimumLevel.Override" /> class used to override the standard logging levels.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.Override">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.Override" /> class used to configure the Serilog logging level overrides.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Override.MicrosoftAspNetCore">
+            <summary>
+             The Microsoft AspNetCore logging level.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Override.SystemNetHttp">
+            <summary>
+            The <see cref="N:System.Net.Http" /> logging level.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Override.AStar">
+            <summary>
+            The AStar-specific logging level.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.Serilog">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.Serilog" /> class used to configure Serilog.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Serilog.Enrich">
+            <summary>
+            An array of Enrichers to use.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Serilog.WriteTo">
+            <summary>
+            An array of <see cref="P:AStar.Dev.Logging.Extensions.Models.Serilog.WriteTo" /> configurations.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.Serilog.MinimumLevel">
+            <summary>
+            The <see cref="P:AStar.Dev.Logging.Extensions.Models.Serilog.MinimumLevel" /> log level to use.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.SerilogConfig">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.SerilogConfig" /> class that contains the Serilog configuration.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.SerilogConfig.Serilog">
+            <summary>
+            The <see cref="P:AStar.Dev.Logging.Extensions.Models.SerilogConfig.Serilog" /> class containing the core configuration.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.SerilogConfig.Logging">
+            <summary>
+            The <see cref="P:AStar.Dev.Logging.Extensions.Models.SerilogConfig.Logging" /> class containing the Logging configuration.
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.Models.WriteTo">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.Models.WriteTo" /> class that configures the relevant WriteTo Serilog logger.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.WriteTo.Name">
+            <summary>
+            The Name of the WriteTo option.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.Models.WriteTo.Args">
+            <summary>
+            An instance of <see cref="P:AStar.Dev.Logging.Extensions.Models.WriteTo.Args" /> to configure the WriteTo Serilog logger.
+            </summary>
+        </member>
+    </members>
+</doc>
