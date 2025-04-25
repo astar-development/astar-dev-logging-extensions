@@ -11,6 +11,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Logging.Extension
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Logging.Extensions.Tests.Unit", "tests\AStar.Dev.Logging.Extensions.Tests.Unit\AStar.Dev.Logging.Extensions.Tests.Unit.csproj", "{B6EE17A9-0491-466B-8240-A304617A9DB3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{D3039A93-8371-42A2-814F-2E09B74E8FBF}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{A62713CB-F1A7-446C-875B-74F964FC52F4}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,5 +42,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9F2D808F-D24F-4031-9C2D-7744B32E15FC} = {BB29ADA9-37FE-434B-BF05-2E195E7C83A2}
 		{B6EE17A9-0491-466B-8240-A304617A9DB3} = {2148A5BF-30D5-460A-BE18-C19426C87428}
+		{A62713CB-F1A7-446C-875B-74F964FC52F4} = {D3039A93-8371-42A2-814F-2E09B74E8FBF}
 	EndGlobalSection
 EndGlobal
