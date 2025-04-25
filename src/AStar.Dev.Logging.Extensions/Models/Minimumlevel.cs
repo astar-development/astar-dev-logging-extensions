@@ -8,7 +8,7 @@ public class MinimumLevel
     /// <summary>
     ///     The default logging level.
     /// </summary>
-    public string Default { get; set; } = string.Empty;
+    public string Default { get; set; } = "Verbose";
 
     /// <summary>
     ///     The <see cref="Override" /> class used to override the standard logging levels.

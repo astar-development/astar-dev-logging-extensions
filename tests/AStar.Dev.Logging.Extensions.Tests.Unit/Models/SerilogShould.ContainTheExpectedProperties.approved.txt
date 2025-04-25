@@ -1,0 +1,12 @@
+﻿{
+  "enrich": [],
+  "writeTo": [],
+  "minimumLevel": {
+    "default": "Verbose",
+    "override": {
+      "microsoftAspNetCore": "",
+      "systemNetHttp": "",
+      "aStar": ""
+    }
+  }
+}

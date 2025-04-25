@@ -7,7 +7,7 @@ namespace AStar.Dev.Logging.Extensions;
 /// <param name="logger"></param>
 /// <param name="telemetryClient"></param>
 /// <typeparam name="TCategoryName"></typeparam>
-public sealed class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, TelemetryClient telemetryClient) : ILoggerAstar<TCategoryName>
+public sealed class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, IAStarTelemetryClient telemetryClient) : ILoggerAstar<TCategoryName>
 {
     private readonly Action<ILogger, string, Exception?> logMessage = LoggerMessage.Define<string>(
                                                                                                    LogLevel.Information,

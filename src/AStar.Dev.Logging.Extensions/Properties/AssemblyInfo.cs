@@ -1,0 +1,1 @@
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("AStar.Dev.Logging.Extensions.Tests.Unit")]
