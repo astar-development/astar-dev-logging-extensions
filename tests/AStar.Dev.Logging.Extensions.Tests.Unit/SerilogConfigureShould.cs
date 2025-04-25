@@ -1,11 +1,8 @@
-using AStar.Dev.Logging.Extensions;
 using AStar.Dev.Logging.Extensions.Models;
 using AStar.Dev.Utilities;
 using JetBrains.Annotations;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
-using NSubstitute;
 using Serilog;
 
 namespace AStar.Dev.Logging.Extensions;
@@ -17,7 +14,7 @@ public class SerilogConfigureShould
     public void ConfigureTheLoggerConfigurationAsExpected()
     {
         var builder    = WebApplication.CreateBuilder();
-        var testConfig = new SerilogConfig { Serilog = { WriteTo = [new() { Args   = new() { ServerUrl = "https://example.com" } }] }, Logging = new Models.Logging(){}};
+        var testConfig = new SerilogConfig { Serilog = { WriteTo = [new() { Args   = new() { ServerUrl = "https://example.com" } }] } };
         File.WriteAllText("serilog.config", testConfig.ToJson()); // OK, not a true unit test but...
 
         var app        = builder.AddSerilogLogging("serilog.config");

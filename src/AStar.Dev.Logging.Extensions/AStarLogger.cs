@@ -1,5 +1,3 @@
-using Microsoft.ApplicationInsights;
-
 namespace AStar.Dev.Logging.Extensions;
 
 /// <summary>

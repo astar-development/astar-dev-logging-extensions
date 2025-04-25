@@ -1,8 +1,6 @@
-using AStar.Dev.Logging.Extensions;
 using JetBrains.Annotations;
 using Microsoft.ApplicationInsights;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
 using NSubstitute;
 
 namespace AStar.Dev.Logging.Extensions;
@@ -10,9 +8,9 @@ namespace AStar.Dev.Logging.Extensions;
 [TestSubject(typeof(AStarLogger<>))]
 public class AStarLoggerShould
 {
+    private readonly ILogger<AStarLoggerShould>     mockLogger;
     private readonly IAStarTelemetryClient          mockTelemetryClient;
     private readonly AStarLogger<AStarLoggerShould> sut;
-    private readonly ILogger<AStarLoggerShould>     mockLogger;
 
     public AStarLoggerShould()
     {
@@ -21,7 +19,7 @@ public class AStarLoggerShould
 #pragma warning disable CS0618 // Type or member is obsolete
         mockTelemetryClient.TelemetryClient.ReturnsForAnyArgs(new TelemetryClient());
 #pragma warning restore CS0618 // Type or member is obsolete
-        sut                 = new AStarLogger<AStarLoggerShould>(mockLogger, mockTelemetryClient);
+        sut                 = new (mockLogger, mockTelemetryClient);
     }
 
     [Fact]

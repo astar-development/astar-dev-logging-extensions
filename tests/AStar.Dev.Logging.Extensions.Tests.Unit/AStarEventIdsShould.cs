@@ -1,4 +1,3 @@
-using AStar.Dev.Logging.Extensions;
 using JetBrains.Annotations;
 
 namespace AStar.Dev.Logging.Extensions;

@@ -1,4 +1,3 @@
-using AStar.Dev.Logging.Extensions;
 using JetBrains.Annotations;
 using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.DataContracts;
@@ -12,7 +11,7 @@ public class CloudRoleNameTelemetryInitializerShould
     [Fact]
     public void InitializeAsExpected()
     {
-        var sut    = new CloudRoleNameTelemetryInitializer("CloudRoleName","InstrumentationKey");
+        var sut           = new CloudRoleNameTelemetryInitializer("CloudRoleName", "InstrumentationKey");
         var mockTelemetry = Substitute.For<ITelemetry>();
         mockTelemetry.Context.ReturnsForAnyArgs(new TelemetryContext());
 
