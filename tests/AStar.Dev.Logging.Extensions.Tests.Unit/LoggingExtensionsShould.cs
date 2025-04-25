@@ -11,7 +11,7 @@ public sealed class LoggingExtensionsShould
     [InlineData(@"c:\This is not a valid filename\as the path\and filename\do not exist.what.did.you.expect.lol")]
     public void ThrowExceptionWhenAddSerilogLoggingIsCalledButConfigIsntValid(string? fileNameWithPath)
     {
-        WebApplicationBuilder builder = WebApplication.CreateBuilder();
+        var builder = WebApplication.CreateBuilder();
 
         Action action = () => builder.AddSerilogLogging(fileNameWithPath!);
 
@@ -21,13 +21,13 @@ public sealed class LoggingExtensionsShould
     [Fact(Skip = "Doesn't work...")]
     public void AddTheExpectedNumberOfSerilogServices()
     {
-        WebApplicationBuilder builder              = WebApplication.CreateBuilder();
-        var                   expectedServiceCount = 147;
-        var                   testConfig           = new SerilogConfig();
-        testConfig.Serilog.WriteTo = [new() { Args = new() { ServerUrl = "https://example.com", }, },];
+        var builder              = WebApplication.CreateBuilder();
+        var expectedServiceCount = 147;
+        var testConfig           = new SerilogConfig();
+        testConfig.Serilog.WriteTo = [new() { Args = new() { ServerUrl = "https://example.com" } }];
         File.WriteAllText("serilig.config", testConfig.ToJson()); // OK, not a true unit test but...
 
-        WebApplicationBuilder sut = builder.AddSerilogLogging("serilig.config");
+        var sut = builder.AddSerilogLogging("serilig.config");
 
         sut.Services.Count(d => d.ServiceType.FullName?.StartsWith("Serilog", StringComparison.InvariantCultureIgnoreCase) == false).ShouldBe(expectedServiceCount);
     }

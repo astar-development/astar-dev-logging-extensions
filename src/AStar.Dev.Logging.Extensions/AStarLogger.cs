@@ -1,5 +1,4 @@
 using Microsoft.ApplicationInsights;
-using Microsoft.Extensions.Logging;
 
 namespace AStar.Dev.Logging.Extensions;
 
@@ -10,24 +9,29 @@ namespace AStar.Dev.Logging.Extensions;
 /// <typeparam name="TCategoryName"></typeparam>
 public sealed class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, TelemetryClient telemetryClient) : ILoggerAstar<TCategoryName>
 {
+    private readonly Action<ILogger, string, Exception?> logMessage = LoggerMessage.Define<string>(
+                                                                                                   LogLevel.Information,
+                                                                                                   AStarEventIds.PageView,
+                                                                                                   "Page view: {ItemName}");
+
     /// <inheritdoc />
     public void LogPageView(string pageName)
     {
-        logger.LogInformation(AStarEventIds.PageView, "Page view: {PageView}", pageName);
+        logMessage(logger, pageName, null);
 
         telemetryClient.TrackPageView(pageName);
     }
 
     /// <inheritdoc />
     public IDisposable? BeginScope<TState>(TState state)
-        where TState : notnull =>
-        logger.BeginScope(state);
+        where TState : notnull
+        => logger.BeginScope(state);
 
     /// <inheritdoc />
-    public bool IsEnabled(LogLevel logLevel) =>
-        logger.IsEnabled(logLevel);
+    public bool IsEnabled(LogLevel logLevel)
+        => logger.IsEnabled(logLevel);
 
     /// <inheritdoc />
-    public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter) =>
-        logger.Log(logLevel, eventId, state, exception, formatter);
+    public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
+        => logger.Log(logLevel, eventId, state, exception, formatter);
 }

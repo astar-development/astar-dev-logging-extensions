@@ -35,7 +35,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\AStar.Dev.Logging.Extensions\AStar.Dev.Logging.Extensions.csproj" />
+        <ProjectReference Include="..\..\src\AStar.Dev.Logging.Extensions\AStar.Dev.Logging.Extensions.csproj"/>
     </ItemGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
