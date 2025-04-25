@@ -1,0 +1,8 @@
+﻿{
+  "default": "Verbose",
+  "override": {
+    "microsoftAspNetCore": "",
+    "systemNetHttp": "",
+    "aStar": ""
+  }
+}
