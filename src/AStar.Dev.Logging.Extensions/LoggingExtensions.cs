@@ -36,6 +36,7 @@ public static class LoggingExtensions
         var seqServerUrl    = builder.Configuration.Get<SerilogConfig>()!.Serilog.WriteTo[0].Args.ServerUrl;
 
         _ = builder.Services.AddScoped<IAStarTelemetryClient, AStarTelemetryClient>();
+        _ = builder.Services.AddScoped<LoggerMessageDefinitions>();
 
         var logger = new LoggerConfiguration()
                      .WriteTo.ApplicationInsights(serviceProvider.GetRequiredService<TelemetryConfiguration>(), TelemetryConverter.Traces)
