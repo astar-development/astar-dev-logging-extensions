@@ -15,30 +15,13 @@
                 The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds" /> class contains the defined <see cref="T:Microsoft.Extensions.Logging.EventId" /> events available for logging
                 Stand-alone <see cref="T:Microsoft.Extensions.Logging.EventId" /> events can be defined but care should be taken to avoid reusing the values used here
             </summary>
-        </member>
-        <member name="T:AStar.Dev.Logging.Extensions.AStarEventIds.Ui">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds.Ui" /> class defines, yep, the EventIds for logging UI-related errors
+                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds" /> class contains the defined <see cref="T:Microsoft.Extensions.Logging.EventId" /> events available for logging
+                Stand-alone <see cref="T:Microsoft.Extensions.Logging.EventId" /> events can be defined but care should be taken to avoid reusing the values used here
             </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Ui.PageView">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a page view
-            </summary>
-        </member>
-        <member name="T:AStar.Dev.Logging.Extensions.AStarEventIds.Common">
-            <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds.Common" /> class defines, yep, the EventIds for logging Common (shared) errors
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Common.ExceptionId">
-            <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an error
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Common.CriticalEventId">
-            <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a critical error
+                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds" /> class contains the defined <see cref="T:Microsoft.Extensions.Logging.EventId" /> events available for logging
+                Stand-alone <see cref="T:Microsoft.Extensions.Logging.EventId" /> events can be defined but care should be taken to avoid reusing the values used here
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.AStarEventIds.Api">
@@ -66,21 +49,68 @@
                 Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a HealthCheck failure
             </summary>
         </member>
+        <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.ApiCallStart">
+            <summary>
+                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an API Call success
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.ApiCallSuccess">
+            <summary>
+                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an API Call success
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.ApiCallWarning">
+            <summary>
+                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an API Call warning
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.ApiCallFailure">
+            <summary>
+                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an API Call failure
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.AStarEventIds.Common">
+            <summary>
+                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds.Common" /> class defines, yep, the EventIds for logging Common (shared) errors
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Common.ExceptionId">
+            <summary>
+                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an error
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Common.CriticalEventId">
+            <summary>
+                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a critical error
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.AStarEventIds.Ui">
+            <summary>
+                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds.Ui" /> class defines, yep, the EventIds for logging UI-related errors
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Ui.PageView">
+            <summary>
+                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a page view
+            </summary>
+        </member>
         <member name="T:AStar.Dev.Logging.Extensions.AStarLogger`1">
             <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1"/> class supplies the currently supported, predefined, Log Messages.
+            There is an additional <seealso cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})"/> method for any currently not implemented log message
             </summary>
-            <param name="loggerMessageDefinitions"></param>
-            <param name="logger"></param>
-            <param name="telemetryClient"></param>
-            <typeparam name="TCategoryName"></typeparam>
+            <param name="logger">The underlying instance of <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> that will perform the actual logging</param>
+            <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/> to perform the Application Insights-specific logging (e.g.: Page View)</param>
+            <typeparam name="TCategoryName">The Logging type</typeparam>
         </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.#ctor(AStar.Dev.Logging.Extensions.LoggerMessageDefinitions,Microsoft.Extensions.Logging.ILogger{`0},AStar.Dev.Logging.Extensions.IAStarTelemetryClient)">
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AStar.Dev.Logging.Extensions.IAStarTelemetryClient)">
             <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1"/> class supplies the currently supported, predefined, Log Messages.
+            There is an additional <seealso cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})"/> method for any currently not implemented log message
             </summary>
-            <param name="loggerMessageDefinitions"></param>
-            <param name="logger"></param>
-            <param name="telemetryClient"></param>
-            <typeparam name="TCategoryName"></typeparam>
+            <param name="logger">The underlying instance of <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> that will perform the actual logging</param>
+            <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/> to perform the Application Insights-specific logging (e.g.: Page View)</param>
+            <typeparam name="TCategoryName">The Logging type</typeparam>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogPageView(System.String)">
             <inheritdoc />
@@ -101,6 +131,18 @@
             <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogCriticalFailure(System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallStart(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallSuccess(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallWarning(System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallFailed(System.String,System.String,System.String)">
             <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.BeginScope``1(``0)">
@@ -221,41 +263,99 @@
             </summary>
             <param name="exception">An instance of the Exception (or derived type) that occurred</param>
         </member>
-        <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitions">
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogApiCallStart(System.String,System.String)">
+            <summary>
+                The LogApiCallStart method logs the call (using the Debug level) for the specified API
+            </summary>
+            <param name="apiName">The name of the API being called</param>
+            <param name="uri">The URI being called</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogApiCallSuccess(System.String,System.String)">
+            <summary>
+                The LogApiCallSuccess method logs the call (using the Debug level) to the specified API
+            </summary>
+            <param name="apiName">The name of the API being called</param>
+            <param name="uri">The URI being called</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogApiCallWarning(System.String,System.String,System.String)">
+            <summary>
+                The LogApiCallWarning method logs the call (using the Warning level) for the specified API
+            </summary>
+            <param name="apiName">The name of the API being called</param>
+            <param name="uri">The URI being called</param>
+            <param name="warningMessage">The warning message to log</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogApiCallFailed(System.String,System.String,System.String)">
+            <summary>
+                The LogApiCallFailed method logs the call (using the Error level) for the specified API
+            </summary>
+            <param name="apiName">The name of the API being called</param>
+            <param name="uri">The URI being called</param>
+            <param name="failureMessage">The failure message to log</param>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi">
             <summary>
             </summary>
         </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitions.CriticalFailure">
-            <summary>
-                Defines the CriticalFailure message definition
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitions.ExceptionLogMessage">
-            <summary>
-                Defines the ExceptionLogMessage message definition
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitions.HealthCheckFailure">
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckFailure">
             <summary>
                 Defines the HealthCheckFailure message definition
             </summary>
         </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitions.HealthCheckStart">
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckStart">
             <summary>
                 Defines the HealthCheckStart message definition
             </summary>
         </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitions.HealthCheckSuccess">
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckSuccess">
             <summary>
                 Defines the HealthCheckSuccess message definition
             </summary>
         </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitions.HealthCheckWarning">
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckWarning">
             <summary>
                 Defines the HealthCheckWarning message definition
             </summary>
         </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitions.PageViewLogMessage">
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.ApiCallFailure">
+            <summary>
+                Defines the ApiCallFailure message definition
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.ApiCallStart">
+            <summary>
+                Defines the ApiCallStart message definition
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.ApiCallSuccess">
+            <summary>
+                Defines the ApiCallSuccess message definition
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.ApiCallWarning">
+            <summary>
+                Defines the ApiCallWarning message definition
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsCommon">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsCommon.CriticalFailure">
+            <summary>
+                Defines the CriticalFailure message definition
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsCommon.ExceptionLogMessage">
+            <summary>
+                Defines the ExceptionLogMessage message definition
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsUi">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsUi.PageViewLogMessage">
             <summary>
                 Defines the PageViewLogMessage message definition
             </summary>

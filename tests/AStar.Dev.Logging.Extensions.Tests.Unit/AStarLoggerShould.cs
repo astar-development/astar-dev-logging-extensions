@@ -8,7 +8,6 @@ namespace AStar.Dev.Logging.Extensions;
 [TestSubject(typeof(AStarLogger<>))]
 public class AStarLoggerShould
 {
-    private readonly LoggerMessageDefinitions       loggerMessageDefinitions;
     private readonly ILogger<AStarLoggerShould>     mockLogger;
     private readonly IAStarTelemetryClient          mockTelemetryClient;
     private readonly AStarLogger<AStarLoggerShould> sut;
@@ -20,8 +19,7 @@ public class AStarLoggerShould
 #pragma warning disable CS0618 // Type or member is obsolete
         mockTelemetryClient.TelemetryClient.ReturnsForAnyArgs(new TelemetryClient());
 #pragma warning restore CS0618 // Type or member is obsolete
-        loggerMessageDefinitions = Substitute.For<LoggerMessageDefinitions>();
-        sut                      = new (loggerMessageDefinitions, mockLogger, mockTelemetryClient);
+        sut                      = new (mockLogger, mockTelemetryClient);
     }
 
     [Fact]
@@ -62,53 +60,5 @@ public class AStarLoggerShould
 
         mockLogger.Received().Log(LogLevel.Trace, "Test");
 #pragma warning restore CA1848
-    }
-
-    [Fact]
-    public void DelegateTheLogHealthCheckStartToTheLoggerMessageDefinitions()
-    {
-        sut.LogHealthCheckStart("MockApiName");
-
-        loggerMessageDefinitions.Received(1).HealthCheckStart(mockLogger, "MockApiName", null);
-    }
-
-    [Fact]
-    public void DelegateTheLogHealthCheckSuccessToTheLoggerMessageDefinitions()
-    {
-        sut.LogHealthCheckSuccess("MockApiName");
-
-        loggerMessageDefinitions.Received(1).HealthCheckSuccess(mockLogger, "MockApiName", null);
-    }
-
-    [Fact]
-    public void DelegateTheLogHealthCheckWarningToTheLoggerMessageDefinitions()
-    {
-        sut.LogHealthCheckWarning("MockApiName", "MockWarningMessage");
-
-        loggerMessageDefinitions.Received(1).HealthCheckWarning(mockLogger, "MockApiName", "MockWarningMessage", null);
-    }
-
-    [Fact]
-    public void DelegateTheLogHealthCheckFailureToTheLoggerMessageDefinitions()
-    {
-        sut.LogHealthCheckFailure("MockApiName", "MockFailureMessage");
-
-        loggerMessageDefinitions.Received(1).HealthCheckFailure(mockLogger, "MockApiName", "MockFailureMessage", null);
-    }
-
-    [Fact]
-    public void DelegateTheLogExceptionToTheLoggerMessageDefinitions()
-    {
-        sut.LogException(new ArgumentException("MockExceptionMessage"));
-
-        loggerMessageDefinitions.Received(1).ExceptionLogMessage(mockLogger, "MockApiName", null);
-    }
-
-    [Fact]
-    public void DelegateTheLogCriticalFailureToTheLoggerMessageDefinitions()
-    {
-        sut.LogCriticalFailure(new ArgumentException("MockCriticalMessage"));
-
-        loggerMessageDefinitions.Received(1).CriticalFailure(mockLogger, "MockApiName", null);
     }
 }

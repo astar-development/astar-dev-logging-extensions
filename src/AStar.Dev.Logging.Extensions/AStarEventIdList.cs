@@ -12,5 +12,9 @@ internal static class AStarEventIdList
     public static readonly EventId HealthCheckStart   = new (2_000, "HealthCheck - Start");
     public static readonly EventId HealthCheckSuccess = new (2_001, "HealthCheck - Success");
     public static readonly EventId HealthCheckWarning = new (2_002, "HealthCheck - Warning");
-    public static readonly EventId HealthCheckFailure = new (2_002, "HealthCheck - Failure");
+    public static readonly EventId HealthCheckFailure = new (2_003, "HealthCheck - Failure");
+    public static readonly EventId ApiCallStart       = new (2_004, "ApiCall - Start");
+    public static readonly EventId ApiCallSuccess     = new (2_005, "ApiCall - Success");
+    public static readonly EventId ApiCallWarning     = new (2_006, "ApiCall - Warning");
+    public static readonly EventId ApiCallFailure     = new (2_007, "ApiCall - Failure");
 }

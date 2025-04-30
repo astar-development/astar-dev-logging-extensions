@@ -4,35 +4,8 @@ namespace AStar.Dev.Logging.Extensions;
 ///     The <see cref="AStarEventIds" /> class contains the defined <see cref="Microsoft.Extensions.Logging.EventId" /> events available for logging
 ///     Stand-alone <see cref="Microsoft.Extensions.Logging.EventId" /> events can be defined but care should be taken to avoid reusing the values used here
 /// </summary>
-public static class AStarEventIds
+public static partial class AStarEventIds
 {
-    /// <summary>
-    ///     The <see cref="Ui" /> class defines, yep, the EventIds for logging UI-related errors
-    /// </summary>
-    public static class Ui
-    {
-        /// <summary>
-        ///     Gets the <see cref="EventId" /> preconfigured for logging a page view
-        /// </summary>
-        public static EventId PageView => AStarEventIdList.PageView;
-    }
-
-    /// <summary>
-    ///     The <see cref="Common" /> class defines, yep, the EventIds for logging Common (shared) errors
-    /// </summary>
-    public static class Common
-    {
-        /// <summary>
-        ///     Gets the <see cref="EventId" /> preconfigured for logging an error
-        /// </summary>
-        public static EventId ExceptionId => AStarEventIdList.Error;
-
-        /// <summary>
-        ///     Gets the <see cref="EventId" /> preconfigured for logging a critical error
-        /// </summary>
-        public static EventId CriticalEventId => AStarEventIdList.CriticalError;
-    }
-
     /// <summary>
     ///     The <see cref="Api" /> class defines, yep, the EventIds for logging API-related errors
     /// </summary>
@@ -57,5 +30,25 @@ public static class AStarEventIds
         ///     Gets the <see cref="EventId" /> preconfigured for logging a HealthCheck failure
         /// </summary>
         public static EventId HealthCheckFailure =>  AStarEventIdList.HealthCheckFailure;
+
+        /// <summary>
+        ///     Gets the <see cref="EventId" /> preconfigured for logging an API Call success
+        /// </summary>
+        public static EventId ApiCallStart =>  AStarEventIdList.ApiCallStart;
+
+        /// <summary>
+        ///     Gets the <see cref="EventId" /> preconfigured for logging an API Call success
+        /// </summary>
+        public static EventId ApiCallSuccess =>  AStarEventIdList.ApiCallSuccess;
+
+        /// <summary>
+        ///     Gets the <see cref="EventId" /> preconfigured for logging an API Call warning
+        /// </summary>
+        public static EventId ApiCallWarning =>  AStarEventIdList.ApiCallWarning;
+
+        /// <summary>
+        ///     Gets the <see cref="EventId" /> preconfigured for logging an API Call failure
+        /// </summary>
+        public static EventId ApiCallFailure =>  AStarEventIdList.ApiCallFailure;
     }
 }
