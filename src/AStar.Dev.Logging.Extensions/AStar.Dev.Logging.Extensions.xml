@@ -145,6 +145,15 @@
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallFailed(System.String,System.String,System.String)">
             <inheritdoc />
         </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.ReturnLoggedFailure(System.Net.Http.HttpResponseMessage,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.ReturnLoggedSuccess``1(``0,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.ReturnLoggedFailure``1(System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.BeginScope``1(``0)">
             <inheritdoc />
         </member>
@@ -292,6 +301,34 @@
             <param name="apiName">The name of the API being called</param>
             <param name="uri">The URI being called</param>
             <param name="failureMessage">The failure message to log</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.ReturnLoggedFailure(System.Net.Http.HttpResponseMessage,System.String)">
+            <summary>
+            The ReturnLoggedFailure will log the Health Check failure and return the <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse"/> object
+            </summary>
+            <param name="response">The instance of <see cref="T:System.Net.Http.HttpResponseMessage"/> from the original call</param>
+            <param name="apiName">The name of the API being called</param>
+            <returns>An instance of <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse"/> appropriately configured</returns>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.ReturnLoggedSuccess``1(``0,System.String,System.String)">
+            <summary>
+            The ReturnLoggedSuccess method will log the successful call and return the TResult response object
+            </summary>
+            <param name="result"></param>
+            <param name="apiName">The name of the API being called</param>
+            <param name="endpointName">The endpoint name of the call</param>
+            <typeparam name="TResult"></typeparam>
+            <returns>An instance of TResult appropriately configured</returns>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.ReturnLoggedFailure``1(System.String,System.String,System.String)">
+            <summary>
+            The ReturnLoggedFailure method will log the failed call and return the TResult response object
+            </summary>
+            <param name="apiName">The name of the API being called</param>
+            <param name="endpointName">The endpoint name of the call</param>
+            <param name="failureMessage">A preconfigured error message to log</param>
+            <typeparam name="TResult">The type of the result</typeparam>
+            <returns>An instance of Result{string,TResult} appropriately configured</returns>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi">
             <summary>
