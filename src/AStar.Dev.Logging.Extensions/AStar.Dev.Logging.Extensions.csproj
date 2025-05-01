@@ -26,7 +26,7 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <TargetFramework>net9.0</TargetFramework>
         <Title>AStar.Dev.Logging.Extensions</Title>
-        <Version>0.5.2</Version>
+        <Version>0.5.3</Version>
     </PropertyGroup>
 
 
@@ -42,6 +42,8 @@
         <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0"/>
         <PackageReference Include="AStar.Dev.Technical.Debt.Reporting" Version="0.1.0"/>
         <PackageReference Include="AStar.Dev.Utilities" Version="1.6.0"/>
+        <PackageReference Include="AStar.Dev.Functional.Extensions" Version="0.2.0"/>
+        <PackageReference Include="AStar.Dev.Api.HealthChecks" Version="0.4.0"/>
         <PackageReference Include="Serilog.AspNetCore" Version="8.0.3"/>
         <PackageReference Include="Serilog.Enrichers.Span" Version="3.1.0"/>
         <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1"/>

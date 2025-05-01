@@ -1,3 +1,6 @@
+using AStar.Dev.Api.HealthChecks;
+using AStar.Dev.Functional.Extensions;
+
 namespace AStar.Dev.Logging.Extensions;
 
 /// <summary>
@@ -79,4 +82,32 @@ public interface ILoggerAstar<out T> : ILogger<T>
     /// <param name="uri">The URI being called</param>
     /// <param name="failureMessage">The failure message to log</param>
     void LogApiCallFailed(string apiName, string uri, string failureMessage);
+
+    /// <summary>
+    /// The ReturnLoggedFailure will log the Health Check failure and return the <see cref="HealthStatusResponse"/> object
+    /// </summary>
+    /// <param name="response">The instance of <see cref="HttpResponseMessage"/> from the original call</param>
+    /// <param name="apiName">The name of the API being called</param>
+    /// <returns>An instance of <see cref="HealthStatusResponse"/> appropriately configured</returns>
+    HealthStatusResponse ReturnLoggedFailure(HttpResponseMessage response, string apiName);
+
+    /// <summary>
+    /// The ReturnLoggedSuccess method will log the successful call and return the TResult response object
+    /// </summary>
+    /// <param name="result"></param>
+    /// <param name="apiName">The name of the API being called</param>
+    /// <param name="endpointName">The endpoint name of the call</param>
+    /// <typeparam name="TResult"></typeparam>
+    /// <returns>An instance of TResult appropriately configured</returns>
+    TResult ReturnLoggedSuccess<TResult>(TResult result, string apiName, string endpointName);
+
+    /// <summary>
+    /// The ReturnLoggedFailure method will log the failed call and return the TResult response object
+    /// </summary>
+    /// <param name="apiName">The name of the API being called</param>
+    /// <param name="endpointName">The endpoint name of the call</param>
+    /// <param name="failureMessage">A preconfigured error message to log</param>
+    /// <typeparam name="TResult">The type of the result</typeparam>
+    /// <returns>An instance of Result{string,TResult} appropriately configured</returns>
+    Result<string, TResult> ReturnLoggedFailure<TResult>(string apiName, string endpointName, string failureMessage);
 }
