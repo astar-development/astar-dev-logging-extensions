@@ -6,6 +6,8 @@ namespace AStar.Dev.Logging.Extensions;
 /// </summary>
 internal static class AStarEventIdList
 {
+    public static readonly EventId Debug              = new (1, "Debug");
+    public static readonly EventId Information        = new (2, "Information");
     public static readonly EventId Error              = new (500, "Error");
     public static readonly EventId CriticalError      = new (666, "Critical Error");
     public static readonly EventId PageView           = new (1_000, "Page View");

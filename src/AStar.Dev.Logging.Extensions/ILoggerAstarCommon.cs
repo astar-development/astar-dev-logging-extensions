@@ -10,6 +10,18 @@ namespace AStar.Dev.Logging.Extensions;
 public partial interface ILoggerAstar<out T> : ILogger<T>
 {
     /// <summary>
+    ///     The LogDebug method does exactly what its name says
+    /// </summary>
+    /// <param name="message">The message to be logged</param>
+    void LogDebug(string message);
+
+    /// <summary>
+    ///     The LogInformation method does exactly what its name says
+    /// </summary>
+    /// <param name="message">The message to be logged</param>
+    void LogInformation(string message);
+
+    /// <summary>
     ///     The LogException method does exactly what its name says
     /// </summary>
     /// <param name="exception">An instance of the Exception (or derived type) that occurred</param>
