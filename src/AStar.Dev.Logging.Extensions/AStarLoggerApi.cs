@@ -7,6 +7,10 @@ public partial class AStarLogger<TCategoryName>
         => LoggerMessageDefinitionsApi.ApiCallStart(logger, apiName, uri, null);
 
     /// <inheritdoc />
+    public void LogApiCallStart(string apiName, string uri, string additionalInformation)
+        => LoggerMessageDefinitionsApi.ApiCallStartWithAdditionalInformation(logger, apiName, uri, additionalInformation, null);
+
+    /// <inheritdoc />
     public void LogApiCallSuccess(string apiName, string uri)
         => LoggerMessageDefinitionsApi.ApiCallSuccess(logger, apiName, uri, null);
 

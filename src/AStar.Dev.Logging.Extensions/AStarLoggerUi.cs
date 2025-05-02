@@ -5,7 +5,7 @@ public partial class AStarLogger<TCategoryName>
     /// <inheritdoc />
     public void LogPageView(string pageName)
     {
-        LoggerMessageDefinitionsUi.PageViewLogMessage(logger, pageName, null);
+        LoggerMessageDefinitionsUi.PageView(logger, pageName, null);
 
         telemetryClient.TrackPageView(pageName);
     }

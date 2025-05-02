@@ -21,6 +21,14 @@ public static class LoggerMessageDefinitionsApi
                                                                                                                    "APICall Start: {ApiName} - {URI}");
 
     /// <summary>
+    ///     Defines the ApiCallStart message definition with additional information
+    /// </summary>
+    public static Action<ILogger, string, string, string, Exception?> ApiCallStartWithAdditionalInformation => LoggerMessage.Define<string, string, string>(
+                                                                                                                                                            LogLevel.Debug,
+                                                                                                                                                            AStarEventIds.Api.ApiCallStart,
+                                                                                                                                                            "APICall Start: {ApiName} - {URI} ({AdditionalInformation})");
+
+    /// <summary>
     ///     Defines the ApiCallSuccess message definition
     /// </summary>
     public static Action<ILogger, string, string, Exception?> ApiCallSuccess => LoggerMessage.Define<string, string>(

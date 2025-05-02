@@ -14,7 +14,7 @@ public partial class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, I
 {
     /// <inheritdoc />
     public void LogException(Exception exception)
-        => LoggerMessageDefinitionsCommon.ExceptionLogMessage(logger, exception.GetBaseException().Message, exception);
+        => LoggerMessageDefinitionsCommon.ExceptionOccurred(logger, exception.GetBaseException().Message, exception);
 
     /// <inheritdoc />
     public void LogCriticalFailure(Exception exception)

@@ -15,8 +15,8 @@ public static class LoggerMessageDefinitionsCommon
     /// <summary>
     ///     Defines the ExceptionLogMessage message definition
     /// </summary>
-    public static Action<ILogger, string, Exception?> ExceptionLogMessage => LoggerMessage.Define<string>(
-                                                                                                          LogLevel.Error,
-                                                                                                          AStarEventIds.Common.ExceptionId,
-                                                                                                          "Error: {ErrorMessage}");
+    public static Action<ILogger, string, Exception?> ExceptionOccurred => LoggerMessage.Define<string>(
+                                                                                                        LogLevel.Error,
+                                                                                                        AStarEventIds.Common.ExceptionId,
+                                                                                                        "Error: {ErrorMessage}");
 }

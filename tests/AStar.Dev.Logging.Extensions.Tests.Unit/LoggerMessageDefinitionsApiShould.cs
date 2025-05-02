@@ -24,6 +24,15 @@ public class LoggerMessageDefinitionsApiShould
     }
 
     [Fact]
+    public void DefineTheApiCallStartMessageWithAdditionalInformationAsExpected()
+    {
+        var apiCallStart = LoggerMessageDefinitionsApi.ApiCallStartWithAdditionalInformation;
+
+        apiCallStart.Method.ToString().ShouldBe("Void <Define>b__1(Microsoft.Extensions.Logging.ILogger, System.String, System.String, System.String, System.Exception)");
+        apiCallStart.Target?.ToString().ShouldBe("Microsoft.Extensions.Logging.LoggerMessage+<>c__DisplayClass14_0`3[System.String,System.String,System.String]");
+    }
+
+    [Fact]
     public void DefineTheApiCallSuccessMessageAsExpected()
     {
         var apiCallSuccess = LoggerMessageDefinitionsApi.ApiCallSuccess;
