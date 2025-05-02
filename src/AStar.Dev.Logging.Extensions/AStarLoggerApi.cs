@@ -1,6 +1,3 @@
-using AStar.Dev.Api.HealthChecks;
-using AStar.Dev.Functional.Extensions;
-
 namespace AStar.Dev.Logging.Extensions;
 
 public partial class AStarLogger<TCategoryName>

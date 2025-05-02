@@ -96,11 +96,11 @@
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.AStarLogger`1">
             <summary>
-            The <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1"/> class supplies the currently supported, predefined, Log Messages.
-            There is an additional <seealso cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})"/> method for any currently not implemented log message
+                The <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1" /> class supplies the currently supported, predefined, Log Messages.
+                There is an additional <seealso cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})" /> method for any currently not implemented log message
             </summary>
-            <param name="logger">The underlying instance of <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> that will perform the actual logging</param>
-            <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/> to perform the Application Insights-specific logging (e.g.: Page View)</param>
+            <param name="logger">The underlying instance of <see cref="T:Microsoft.Extensions.Logging.ILogger`1" /> that will perform the actual logging</param>
+            <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient" /> to perform the Application Insights-specific logging (e.g.: Page View)</param>
             <typeparam name="TCategoryName">The Logging type</typeparam>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallStart(System.String,System.String)">
@@ -117,11 +117,11 @@
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AStar.Dev.Logging.Extensions.IAStarTelemetryClient)">
             <summary>
-            The <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1"/> class supplies the currently supported, predefined, Log Messages.
-            There is an additional <seealso cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})"/> method for any currently not implemented log message
+                The <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1" /> class supplies the currently supported, predefined, Log Messages.
+                There is an additional <seealso cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})" /> method for any currently not implemented log message
             </summary>
-            <param name="logger">The underlying instance of <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> that will perform the actual logging</param>
-            <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/> to perform the Application Insights-specific logging (e.g.: Page View)</param>
+            <param name="logger">The underlying instance of <see cref="T:Microsoft.Extensions.Logging.ILogger`1" /> that will perform the actual logging</param>
+            <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient" /> to perform the Application Insights-specific logging (e.g.: Page View)</param>
             <typeparam name="TCategoryName">The Logging type</typeparam>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogException(System.Exception)">
@@ -304,15 +304,15 @@
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.ReturnLoggedFailure(System.Net.Http.HttpResponseMessage,System.String)">
             <summary>
-            The ReturnLoggedFailure will log the Health Check failure and return the <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse"/> object
+                The ReturnLoggedFailure will log the Health Check failure and return the <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse" /> object
             </summary>
-            <param name="response">The instance of <see cref="T:System.Net.Http.HttpResponseMessage"/> from the original call</param>
+            <param name="response">The instance of <see cref="T:System.Net.Http.HttpResponseMessage" /> from the original call</param>
             <param name="apiName">The name of the API being called</param>
-            <returns>An instance of <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse"/> appropriately configured</returns>
+            <returns>An instance of <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse" /> appropriately configured</returns>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.ReturnLoggedSuccess``1(``0,System.String,System.String)">
             <summary>
-            The ReturnLoggedSuccess method will log the successful call and return the TResult response object
+                The ReturnLoggedSuccess method will log the successful call and return the TResult response object
             </summary>
             <param name="result"></param>
             <param name="apiName">The name of the API being called</param>
@@ -322,7 +322,7 @@
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.ReturnLoggedFailure``1(System.String,System.String,System.String)">
             <summary>
-            The ReturnLoggedFailure method will log the failed call and return the TResult response object
+                The ReturnLoggedFailure method will log the failed call and return the TResult response object
             </summary>
             <param name="apiName">The name of the API being called</param>
             <param name="endpointName">The endpoint name of the call</param>
@@ -332,26 +332,6 @@
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi">
             <summary>
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckFailure">
-            <summary>
-                Defines the HealthCheckFailure message definition
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckStart">
-            <summary>
-                Defines the HealthCheckStart message definition
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckSuccess">
-            <summary>
-                Defines the HealthCheckSuccess message definition
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckWarning">
-            <summary>
-                Defines the HealthCheckWarning message definition
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.ApiCallFailure">
@@ -386,6 +366,30 @@
         <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsCommon.ExceptionLogMessage">
             <summary>
                 Defines the ExceptionLogMessage message definition
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsHealthChecks">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsHealthChecks.HealthCheckFailure">
+            <summary>
+                Defines the HealthCheckFailure message definition
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsHealthChecks.HealthCheckStart">
+            <summary>
+                Defines the HealthCheckStart message definition
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsHealthChecks.HealthCheckSuccess">
+            <summary>
+                Defines the HealthCheckSuccess message definition
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsHealthChecks.HealthCheckWarning">
+            <summary>
+                Defines the HealthCheckWarning message definition
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsUi">

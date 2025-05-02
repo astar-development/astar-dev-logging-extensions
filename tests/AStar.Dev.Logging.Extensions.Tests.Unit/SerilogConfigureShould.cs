@@ -1,5 +1,3 @@
-using AStar.Dev.Logging.Extensions.Models;
-using AStar.Dev.Utilities;
 using JetBrains.Annotations;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Builder;
@@ -13,14 +11,11 @@ public class SerilogConfigureShould
     [Fact]
     public void ConfigureTheLoggerConfigurationAsExpected()
     {
-        var builder    = WebApplication.CreateBuilder();
-        var testConfig = new SerilogConfig { Serilog = { WriteTo = [new() { Args   = new() { ServerUrl = "https://example.com" } }] } };
-        File.WriteAllText("serilog.config", testConfig.ToJson()); // OK, not a true unit test but...
-
-        var app        = builder.AddSerilogLogging("serilog.config");
-
+        var builder                = WebApplication.CreateBuilder();
+        var app                    = builder.AddSerilogLogging("helpers/serilog.json");
         var telemetryConfiguration = new TelemetryConfiguration();
         var loggerConfiguration    = new LoggerConfiguration();
+
         var sut                    = loggerConfiguration.Configure(app.Configuration, telemetryConfiguration);
 
         sut.WriteTo.ApplicationInsights(telemetryConfiguration, TelemetryConverter.Traces).ShouldNotBeNull();

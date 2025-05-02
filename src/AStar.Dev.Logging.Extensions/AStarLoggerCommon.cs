@@ -4,11 +4,11 @@ using AStar.Dev.Functional.Extensions;
 namespace AStar.Dev.Logging.Extensions;
 
 /// <summary>
-/// The <see cref="AStarLogger{TCategoryName}"/> class supplies the currently supported, predefined, Log Messages.
-/// There is an additional <seealso cref="Log{TState}"/> method for any currently not implemented log message
+///     The <see cref="AStarLogger{TCategoryName}" /> class supplies the currently supported, predefined, Log Messages.
+///     There is an additional <seealso cref="Log{TState}" /> method for any currently not implemented log message
 /// </summary>
-/// <param name="logger">The underlying instance of <see cref="ILogger{TCategoryName}"/> that will perform the actual logging</param>
-/// <param name="telemetryClient">An instance of the <see cref="IAStarTelemetryClient"/> to perform the Application Insights-specific logging (e.g.: Page View)</param>
+/// <param name="logger">The underlying instance of <see cref="ILogger{TCategoryName}" /> that will perform the actual logging</param>
+/// <param name="telemetryClient">An instance of the <see cref="IAStarTelemetryClient" /> to perform the Application Insights-specific logging (e.g.: Page View)</param>
 /// <typeparam name="TCategoryName">The Logging type</typeparam>
 public partial class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, IAStarTelemetryClient telemetryClient) : ILoggerAstar<TCategoryName>
 {
