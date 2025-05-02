@@ -103,36 +103,6 @@
             <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/> to perform the Application Insights-specific logging (e.g.: Page View)</param>
             <typeparam name="TCategoryName">The Logging type</typeparam>
         </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AStar.Dev.Logging.Extensions.IAStarTelemetryClient)">
-            <summary>
-            The <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1"/> class supplies the currently supported, predefined, Log Messages.
-            There is an additional <seealso cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})"/> method for any currently not implemented log message
-            </summary>
-            <param name="logger">The underlying instance of <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> that will perform the actual logging</param>
-            <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/> to perform the Application Insights-specific logging (e.g.: Page View)</param>
-            <typeparam name="TCategoryName">The Logging type</typeparam>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogPageView(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckStart(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckSuccess(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckWarning(System.String,System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckFailure(System.String,System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogException(System.Exception)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogCriticalFailure(System.Exception)">
-            <inheritdoc />
-        </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallStart(System.String,System.String)">
             <inheritdoc />
         </member>
@@ -143,6 +113,21 @@
             <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallFailed(System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AStar.Dev.Logging.Extensions.IAStarTelemetryClient)">
+            <summary>
+            The <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1"/> class supplies the currently supported, predefined, Log Messages.
+            There is an additional <seealso cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})"/> method for any currently not implemented log message
+            </summary>
+            <param name="logger">The underlying instance of <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> that will perform the actual logging</param>
+            <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/> to perform the Application Insights-specific logging (e.g.: Page View)</param>
+            <typeparam name="TCategoryName">The Logging type</typeparam>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogException(System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogCriticalFailure(System.Exception)">
             <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.ReturnLoggedFailure(System.Net.Http.HttpResponseMessage,System.String)">
@@ -161,6 +146,21 @@
             <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckStart(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckSuccess(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckWarning(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckFailure(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogPageView(System.String)">
             <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.AStarTelemetryClient">
