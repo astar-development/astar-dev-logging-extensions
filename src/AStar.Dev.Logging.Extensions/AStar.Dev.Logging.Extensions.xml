@@ -228,50 +228,6 @@
             </summary>
             <typeparam name="T">The type of logger</typeparam>
         </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogPageView(System.String)">
-            <summary>
-                The LogPageView method will log the page view using Application Insights Page View (if configured) as well as the logging provider(s) configured separately
-            </summary>
-            <param name="pageName">The name of the page being viewed</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckStart(System.String)">
-            <summary>
-                The LogHealthCheckStart method logs the call (using the Debug level) to the HealthCheck for the specified API
-            </summary>
-            <param name="apiName">The name of the API being checked</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckSuccess(System.String)">
-            <summary>
-                The LogHealthCheckSuccess method logs the call (using the Debug level) to the HealthCheck for the specified API
-            </summary>
-            <param name="apiName">The name of the API being checked</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckWarning(System.String,System.String)">
-            <summary>
-                The LogHealthCheckWarning method logs the call (using the Warning level) to the HealthCheck for the specified API
-            </summary>
-            <param name="apiName">The name of the API being checked</param>
-            <param name="warningMessage">The warning message to log</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckFailure(System.String,System.String)">
-            <summary>
-                The LogHealthCheckFailure method logs the call (using the Error level) to the HealthCheck for the specified API
-            </summary>
-            <param name="apiName">The name of the API being checked</param>
-            <param name="failureMessage">The failure message to log</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogException(System.Exception)">
-            <summary>
-                The LogException method does exactly what its name says
-            </summary>
-            <param name="exception">An instance of the Exception (or derived type) that occurred</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogCriticalFailure(System.Exception)">
-            <summary>
-                The LogCriticalFailure method does exactly what its name says
-            </summary>
-            <param name="exception">An instance of the Exception (or derived type) that occurred</param>
-        </member>
         <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogApiCallStart(System.String,System.String)">
             <summary>
                 The LogApiCallStart method logs the call (using the Debug level) for the specified API
@@ -302,6 +258,18 @@
             <param name="uri">The URI being called</param>
             <param name="failureMessage">The failure message to log</param>
         </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogException(System.Exception)">
+            <summary>
+                The LogException method does exactly what its name says
+            </summary>
+            <param name="exception">An instance of the Exception (or derived type) that occurred</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogCriticalFailure(System.Exception)">
+            <summary>
+                The LogCriticalFailure method does exactly what its name says
+            </summary>
+            <param name="exception">An instance of the Exception (or derived type) that occurred</param>
+        </member>
         <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.ReturnLoggedFailure(System.Net.Http.HttpResponseMessage,System.String)">
             <summary>
                 The ReturnLoggedFailure will log the Health Check failure and return the <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse" /> object
@@ -329,6 +297,38 @@
             <param name="failureMessage">A preconfigured error message to log</param>
             <typeparam name="TResult">The type of the result</typeparam>
             <returns>An instance of Result{string,TResult} appropriately configured</returns>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckStart(System.String)">
+            <summary>
+                The LogHealthCheckStart method logs the call (using the Debug level) to the HealthCheck for the specified API
+            </summary>
+            <param name="apiName">The name of the API being checked</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckSuccess(System.String)">
+            <summary>
+                The LogHealthCheckSuccess method logs the call (using the Debug level) to the HealthCheck for the specified API
+            </summary>
+            <param name="apiName">The name of the API being checked</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckWarning(System.String,System.String)">
+            <summary>
+                The LogHealthCheckWarning method logs the call (using the Warning level) to the HealthCheck for the specified API
+            </summary>
+            <param name="apiName">The name of the API being checked</param>
+            <param name="warningMessage">The warning message to log</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckFailure(System.String,System.String)">
+            <summary>
+                The LogHealthCheckFailure method logs the call (using the Error level) to the HealthCheck for the specified API
+            </summary>
+            <param name="apiName">The name of the API being checked</param>
+            <param name="failureMessage">The failure message to log</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogPageView(System.String)">
+            <summary>
+                The LogPageView method will log the page view using Application Insights Page View (if configured) as well as the logging provider(s) configured separately
+            </summary>
+            <param name="pageName">The name of the page being viewed</param>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi">
             <summary>
