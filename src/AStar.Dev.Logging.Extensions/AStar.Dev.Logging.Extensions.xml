@@ -6,201 +6,285 @@
     <members>
         <member name="T:AStar.Dev.Logging.Extensions.AStarEventIdList">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIdList" /> class exists solely to collect the currently defined EventIds in one place to aid comprehension of the supported Ids
-                The <seealso cref="T:AStar.Dev.Logging.Extensions.AStarEventIds" /> class exists (along with the nested classes) to expose the supported Ids for public consumption, grouped together into logical "chunks"
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIdList"/>
+                class exists solely to collect the currently defined EventIds in one place to aid comprehension of the supported Ids
+                The
+                <seealso cref="T:AStar.Dev.Logging.Extensions.AStarEventIds"/>
+                class exists (along with the nested classes) to expose the supported Ids for public consumption, grouped together into logical "chunks"
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.AStarEventIds">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds" /> class contains the defined <see cref="T:Microsoft.Extensions.Logging.EventId" /> events available for logging
-                Stand-alone <see cref="T:Microsoft.Extensions.Logging.EventId" /> events can be defined but care should be taken to avoid reusing the values used here
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds"/>
+                class contains the defined
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                events available for logging
+                Stand-alone
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                events can be defined but care should be taken to avoid reusing the values used here
             </summary>
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds" /> class contains the defined <see cref="T:Microsoft.Extensions.Logging.EventId" /> events available for logging
-                Stand-alone <see cref="T:Microsoft.Extensions.Logging.EventId" /> events can be defined but care should be taken to avoid reusing the values used here
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds"/>
+                class contains the defined
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                events available for logging
+                Stand-alone
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                events can be defined but care should be taken to avoid reusing the values used here
             </summary>
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds" /> class contains the defined <see cref="T:Microsoft.Extensions.Logging.EventId" /> events available for logging
-                Stand-alone <see cref="T:Microsoft.Extensions.Logging.EventId" /> events can be defined but care should be taken to avoid reusing the values used here
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds"/>
+                class contains the defined
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                events available for logging
+                Stand-alone
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                events can be defined but care should be taken to avoid reusing the values used here
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.AStarEventIds.Api">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds.Api" /> class defines, yep, the EventIds for logging API-related errors
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds.Api"/>
+                class defines, yep, the EventIds for logging API-related errors
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.HealthCheckStart">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a HealthCheck start
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging a HealthCheck start
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.HealthCheckSuccess">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a HealthCheck success
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging a HealthCheck success
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.HealthCheckWarning">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a HealthCheck warning
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging a HealthCheck warning
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.HealthCheckFailure">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a HealthCheck failure
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging a HealthCheck failure
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.ApiCallStart">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an API Call success
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging an API Call success
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.ApiCallSuccess">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an API Call success
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging an API Call success
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.ApiCallWarning">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an API Call warning
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging an API Call warning
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Api.ApiCallFailure">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an API Call failure
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging an API Call failure
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.AStarEventIds.Common">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds.Common" /> class defines, yep, the EventIds for logging Common (shared) errors
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds.Common"/>
+                class defines, yep, the EventIds for logging Common (shared) errors
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Common.ExceptionId">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging an error
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging an error
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Common.CriticalEventId">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a critical error
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging a critical error
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.AStarEventIds.Ui">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds.Ui" /> class defines, yep, the EventIds for logging UI-related errors
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.AStarEventIds.Ui"/>
+                class defines, yep, the EventIds for logging UI-related errors
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarEventIds.Ui.PageView">
             <summary>
-                Gets the <see cref="T:Microsoft.Extensions.Logging.EventId" /> preconfigured for logging a page view
+                Gets the
+                <see cref="T:Microsoft.Extensions.Logging.EventId"/>
+                preconfigured for logging a page view
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.AStarLogger`1">
             <summary>
-            The <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1"/> class supplies the currently supported, predefined, Log Messages.
-            There is an additional <seealso cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})"/> method for any currently not implemented log message
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1"/>
+                class supplies the currently supported, predefined, Log Messages.
+                There is an additional
+                <seealso
+                        cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})"/>
+                method for any currently not implemented log message
             </summary>
-            <param name="logger">The underlying instance of <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> that will perform the actual logging</param>
-            <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/> to perform the Application Insights-specific logging (e.g.: Page View)</param>
+            <param name="logger">The underlying instance of
+                <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/>
+                that will perform the actual logging
+            </param>
+            <param name="telemetryClient">An instance of the
+                <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/>
+                to perform the Application Insights-specific logging (e.g.: Page View)
+            </param>
             <typeparam name="TCategoryName">The Logging type</typeparam>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallStart(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallSuccess(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallWarning(System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallFailed(System.String,System.String,System.String)">
+            <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AStar.Dev.Logging.Extensions.IAStarTelemetryClient)">
             <summary>
-            The <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1"/> class supplies the currently supported, predefined, Log Messages.
-            There is an additional <seealso cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})"/> method for any currently not implemented log message
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.AStarLogger`1"/>
+                class supplies the currently supported, predefined, Log Messages.
+                There is an additional
+                <seealso
+                        cref="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})"/>
+                method for any currently not implemented log message
             </summary>
-            <param name="logger">The underlying instance of <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> that will perform the actual logging</param>
-            <param name="telemetryClient">An instance of the <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/> to perform the Application Insights-specific logging (e.g.: Page View)</param>
+            <param name="logger">The underlying instance of
+                <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/>
+                that will perform the actual logging
+            </param>
+            <param name="telemetryClient">An instance of the
+                <see cref="T:AStar.Dev.Logging.Extensions.IAStarTelemetryClient"/>
+                to perform the Application Insights-specific logging (e.g.: Page View)
+            </param>
             <typeparam name="TCategoryName">The Logging type</typeparam>
         </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogPageView(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckStart(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckSuccess(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckWarning(System.String,System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckFailure(System.String,System.String)">
-            <inheritdoc />
-        </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogException(System.Exception)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogCriticalFailure(System.Exception)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallStart(System.String,System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallSuccess(System.String,System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallWarning(System.String,System.String,System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogApiCallFailed(System.String,System.String,System.String)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.ReturnLoggedFailure(System.Net.Http.HttpResponseMessage,System.String)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.ReturnLoggedSuccess``1(``0,System.String,System.String)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.ReturnLoggedFailure``1(System.String,System.String,System.String)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.BeginScope``1(``0)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
-            <inheritdoc />
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckStart(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckSuccess(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckWarning(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogHealthCheckFailure(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.LogPageView(System.String)">
+            <inheritdoc/>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.AStarTelemetryClient">
             <summary>
-                This class exists to enable testing of the underlying functionality - it acts solely as a wrapper to <see cref="P:AStar.Dev.Logging.Extensions.AStarTelemetryClient.TelemetryClient" />
+                This class exists to enable testing of the underlying functionality - it acts solely as a wrapper to
+                <see cref="P:AStar.Dev.Logging.Extensions.AStarTelemetryClient.TelemetryClient"/>
             </summary>
             <param name="telemetryClient"></param>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarTelemetryClient.#ctor(Microsoft.ApplicationInsights.TelemetryClient)">
             <summary>
-                This class exists to enable testing of the underlying functionality - it acts solely as a wrapper to <see cref="P:AStar.Dev.Logging.Extensions.AStarTelemetryClient.TelemetryClient" />
+                This class exists to enable testing of the underlying functionality - it acts solely as a wrapper to
+                <see cref="P:AStar.Dev.Logging.Extensions.AStarTelemetryClient.TelemetryClient"/>
             </summary>
             <param name="telemetryClient"></param>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.AStarTelemetryClient.TelemetryClient">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.AStarTelemetryClient.TrackPageView(System.String)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.CloudRoleNameTelemetryInitializer">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.CloudRoleNameTelemetryInitializer" /> class implements the <see cref="T:Microsoft.ApplicationInsights.Extensibility.ITelemetryInitializer" /> interface to add the Cloud Role Name to the Application Insights logging.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.CloudRoleNameTelemetryInitializer"/>
+                class implements the
+                <see cref="T:Microsoft.ApplicationInsights.Extensibility.ITelemetryInitializer"/>
+                interface to add the Cloud Role Name to the Application Insights logging.
             </summary>
             <param name="roleOrApplicationName">The Role / Application Name to configure Application Insights with</param>
             <param name="instrumentationKey">The Instrumentation Key to configure Application Insights with</param>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.CloudRoleNameTelemetryInitializer.#ctor(System.String,System.String)">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.CloudRoleNameTelemetryInitializer" /> class implements the <see cref="T:Microsoft.ApplicationInsights.Extensibility.ITelemetryInitializer" /> interface to add the Cloud Role Name to the Application Insights logging.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.CloudRoleNameTelemetryInitializer"/>
+                class implements the
+                <see cref="T:Microsoft.ApplicationInsights.Extensibility.ITelemetryInitializer"/>
+                interface to add the Cloud Role Name to the Application Insights logging.
             </summary>
             <param name="roleOrApplicationName">The Role / Application Name to configure Application Insights with</param>
             <param name="instrumentationKey">The Instrumentation Key to configure Application Insights with</param>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.CloudRoleNameTelemetryInitializer.Initialize(Microsoft.ApplicationInsights.Channel.ITelemetry)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Configuration">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Configuration" /> class is a container for any applicable constants to use during logging
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Configuration"/>
+                class is a container for any applicable constants to use during logging
                 configuration.
             </summary>
         </member>
@@ -224,53 +308,11 @@
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.ILoggerAstar`1">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.ILoggerAstar`1" /> adds specific log messages which, under the hood, use the LoggerMessage.Define method to specify the Log Format
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.ILoggerAstar`1"/>
+                adds specific log messages which, under the hood, use the LoggerMessage.Define method to specify the Log Format
             </summary>
             <typeparam name="T">The type of logger</typeparam>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogPageView(System.String)">
-            <summary>
-                The LogPageView method will log the page view using Application Insights Page View (if configured) as well as the logging provider(s) configured separately
-            </summary>
-            <param name="pageName">The name of the page being viewed</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckStart(System.String)">
-            <summary>
-                The LogHealthCheckStart method logs the call (using the Debug level) to the HealthCheck for the specified API
-            </summary>
-            <param name="apiName">The name of the API being checked</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckSuccess(System.String)">
-            <summary>
-                The LogHealthCheckSuccess method logs the call (using the Debug level) to the HealthCheck for the specified API
-            </summary>
-            <param name="apiName">The name of the API being checked</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckWarning(System.String,System.String)">
-            <summary>
-                The LogHealthCheckWarning method logs the call (using the Warning level) to the HealthCheck for the specified API
-            </summary>
-            <param name="apiName">The name of the API being checked</param>
-            <param name="warningMessage">The warning message to log</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckFailure(System.String,System.String)">
-            <summary>
-                The LogHealthCheckFailure method logs the call (using the Error level) to the HealthCheck for the specified API
-            </summary>
-            <param name="apiName">The name of the API being checked</param>
-            <param name="failureMessage">The failure message to log</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogException(System.Exception)">
-            <summary>
-                The LogException method does exactly what its name says
-            </summary>
-            <param name="exception">An instance of the Exception (or derived type) that occurred</param>
-        </member>
-        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogCriticalFailure(System.Exception)">
-            <summary>
-                The LogCriticalFailure method does exactly what its name says
-            </summary>
-            <param name="exception">An instance of the Exception (or derived type) that occurred</param>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogApiCallStart(System.String,System.String)">
             <summary>
@@ -302,17 +344,37 @@
             <param name="uri">The URI being called</param>
             <param name="failureMessage">The failure message to log</param>
         </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogException(System.Exception)">
+            <summary>
+                The LogException method does exactly what its name says
+            </summary>
+            <param name="exception">An instance of the Exception (or derived type) that occurred</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogCriticalFailure(System.Exception)">
+            <summary>
+                The LogCriticalFailure method does exactly what its name says
+            </summary>
+            <param name="exception">An instance of the Exception (or derived type) that occurred</param>
+        </member>
         <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.ReturnLoggedFailure(System.Net.Http.HttpResponseMessage,System.String)">
             <summary>
-            The ReturnLoggedFailure will log the Health Check failure and return the <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse"/> object
+                The ReturnLoggedFailure will log the Health Check failure and return the
+                <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse"/>
+                object
             </summary>
-            <param name="response">The instance of <see cref="T:System.Net.Http.HttpResponseMessage"/> from the original call</param>
+            <param name="response">The instance of
+                <see cref="T:System.Net.Http.HttpResponseMessage"/>
+                from the original call
+            </param>
             <param name="apiName">The name of the API being called</param>
-            <returns>An instance of <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse"/> appropriately configured</returns>
+            <returns>An instance of
+                <see cref="T:AStar.Dev.Api.HealthChecks.HealthStatusResponse"/>
+                appropriately configured
+            </returns>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.ReturnLoggedSuccess``1(``0,System.String,System.String)">
             <summary>
-            The ReturnLoggedSuccess method will log the successful call and return the TResult response object
+                The ReturnLoggedSuccess method will log the successful call and return the TResult response object
             </summary>
             <param name="result"></param>
             <param name="apiName">The name of the API being called</param>
@@ -322,7 +384,7 @@
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.ReturnLoggedFailure``1(System.String,System.String,System.String)">
             <summary>
-            The ReturnLoggedFailure method will log the failed call and return the TResult response object
+                The ReturnLoggedFailure method will log the failed call and return the TResult response object
             </summary>
             <param name="apiName">The name of the API being called</param>
             <param name="endpointName">The endpoint name of the call</param>
@@ -330,28 +392,40 @@
             <typeparam name="TResult">The type of the result</typeparam>
             <returns>An instance of Result{string,TResult} appropriately configured</returns>
         </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckStart(System.String)">
+            <summary>
+                The LogHealthCheckStart method logs the call (using the Debug level) to the HealthCheck for the specified API
+            </summary>
+            <param name="apiName">The name of the API being checked</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckSuccess(System.String)">
+            <summary>
+                The LogHealthCheckSuccess method logs the call (using the Debug level) to the HealthCheck for the specified API
+            </summary>
+            <param name="apiName">The name of the API being checked</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckWarning(System.String,System.String)">
+            <summary>
+                The LogHealthCheckWarning method logs the call (using the Warning level) to the HealthCheck for the specified API
+            </summary>
+            <param name="apiName">The name of the API being checked</param>
+            <param name="warningMessage">The warning message to log</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogHealthCheckFailure(System.String,System.String)">
+            <summary>
+                The LogHealthCheckFailure method logs the call (using the Error level) to the HealthCheck for the specified API
+            </summary>
+            <param name="apiName">The name of the API being checked</param>
+            <param name="failureMessage">The failure message to log</param>
+        </member>
+        <member name="M:AStar.Dev.Logging.Extensions.ILoggerAstar`1.LogPageView(System.String)">
+            <summary>
+                The LogPageView method will log the page view using Application Insights Page View (if configured) as well as the logging provider(s) configured separately
+            </summary>
+            <param name="pageName">The name of the page being viewed</param>
+        </member>
         <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi">
             <summary>
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckFailure">
-            <summary>
-                Defines the HealthCheckFailure message definition
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckStart">
-            <summary>
-                Defines the HealthCheckStart message definition
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckSuccess">
-            <summary>
-                Defines the HealthCheckSuccess message definition
-            </summary>
-        </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.HealthCheckWarning">
-            <summary>
-                Defines the HealthCheckWarning message definition
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsApi.ApiCallFailure">
@@ -383,28 +457,56 @@
                 Defines the CriticalFailure message definition
             </summary>
         </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsCommon.ExceptionLogMessage">
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsCommon.ExceptionOccurred">
             <summary>
                 Defines the ExceptionLogMessage message definition
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsHealthChecks">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsHealthChecks.HealthCheckFailure">
+            <summary>
+                Defines the HealthCheckFailure message definition
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsHealthChecks.HealthCheckStart">
+            <summary>
+                Defines the HealthCheckStart message definition
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsHealthChecks.HealthCheckSuccess">
+            <summary>
+                Defines the HealthCheckSuccess message definition
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsHealthChecks.HealthCheckWarning">
+            <summary>
+                Defines the HealthCheckWarning message definition
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsUi">
             <summary>
             </summary>
         </member>
-        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsUi.PageViewLogMessage">
+        <member name="P:AStar.Dev.Logging.Extensions.LoggerMessageDefinitionsUi.PageView">
             <summary>
                 Defines the PageViewLogMessage message definition
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.LoggingExtensions">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.LoggingExtensions" /> class contains, as you might expect, extension methods for configuring Serilog / Application Insights.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.LoggingExtensions"/>
+                class contains, as you might expect, extension methods for configuring Serilog / Application Insights.
             </summary>
         </member>
         <member name="M:AStar.Dev.Logging.Extensions.LoggingExtensions.AddSerilogLogging(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String)">
             <summary>
-                The <see cref="M:AStar.Dev.Logging.Extensions.LoggingExtensions.AddSerilogLogging(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String)" /> method will add Serilog to the logging providers.
+                The
+                <see cref="M:AStar.Dev.Logging.Extensions.LoggingExtensions.AddSerilogLogging(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String)"/>
+                method will add Serilog to the logging providers.
             </summary>
             <param name="builder">
             </param>
@@ -412,12 +514,16 @@
                 The name (including extension) of the file containing the Serilog Configuration settings.
             </param>
             <returns>
-                The original instance of <see cref="T:Microsoft.AspNetCore.Builder.WebApplicationBuilder" /> for further method chaining.
+                The original instance of
+                <see cref="T:Microsoft.AspNetCore.Builder.WebApplicationBuilder"/>
+                for further method chaining.
             </returns>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.ApplicationInsights">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.ApplicationInsights" /> class which is used to configure the logging.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.ApplicationInsights"/>
+                class which is used to configure the logging.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.ApplicationInsights.LogLevel">
@@ -427,7 +533,9 @@
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.Args">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.Args" /> class used by Serilog WriteTo section of the logging configuration.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.Args"/>
+                class used by Serilog WriteTo section of the logging configuration.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Args.ServerUrl">
@@ -437,7 +545,9 @@
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.Console">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.Console" /> class used by Serilog Console section of the logging configuration.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.Console"/>
+                class used by Serilog Console section of the logging configuration.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Console.FormatterName">
@@ -447,12 +557,16 @@
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Console.FormatterOptions">
             <summary>
-                The <see cref="P:AStar.Dev.Logging.Extensions.Models.Console.FormatterOptions" /> class used to supply the Formatter Options to use.
+                The
+                <see cref="P:AStar.Dev.Logging.Extensions.Models.Console.FormatterOptions"/>
+                class used to supply the Formatter Options to use.
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.FormatterOptions">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.FormatterOptions" /> class used by the Serilog Console logger.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.FormatterOptions"/>
+                class used by the Serilog Console logger.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.SingleLine">
@@ -472,42 +586,54 @@
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.UseUtcTimestamp">
             <summary>
-                Whether to use a UTC Timestamp or not. The default is <see langword="true" />.
+                Whether to use a UTC Timestamp or not. The default is<see langword="true"/>.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.JsonWriterOptions">
             <summary>
-                The <see cref="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.JsonWriterOptions" /> used to configure the JSON Writer.
+                The
+                <see cref="P:AStar.Dev.Logging.Extensions.Models.FormatterOptions.JsonWriterOptions"/>
+                used to configure the JSON Writer.
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.JsonWriterOptions">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.JsonWriterOptions" /> class containing the configuration options.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.JsonWriterOptions"/>
+                class containing the configuration options.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.JsonWriterOptions.Indented">
             <summary>
-                Whether to use indented JSON or not. The default is <see langword="false" />.
+                Whether to use indented JSON or not. The default is<see langword="false"/>.
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.Logging">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.Logging" /> class used to configure the standard logging.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.Logging"/>
+                class used to configure the standard logging.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Logging.Console">
             <summary>
-                An instance of <see cref="P:AStar.Dev.Logging.Extensions.Models.Logging.Console" /> class used to configure the Console logger.
+                An instance of
+                <see cref="P:AStar.Dev.Logging.Extensions.Models.Logging.Console"/>
+                class used to configure the Console logger.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Logging.ApplicationInsights">
             <summary>
-                An instance of <see cref="P:AStar.Dev.Logging.Extensions.Models.Logging.ApplicationInsights" /> class used to configure the Application Insights logger.
+                An instance of
+                <see cref="P:AStar.Dev.Logging.Extensions.Models.Logging.ApplicationInsights"/>
+                class used to configure the Application Insights logger.
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.LogLevel">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.LogLevel" /> class used to configure Application Insights.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.LogLevel"/>
+                class used to configure Application Insights.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.LogLevel.Default">
@@ -527,7 +653,9 @@
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.MinimumLevel">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.MinimumLevel" /> class used to configure Serilog.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.MinimumLevel"/>
+                class used to configure Serilog.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.MinimumLevel.Default">
@@ -537,12 +665,16 @@
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.MinimumLevel.Override">
             <summary>
-                The <see cref="P:AStar.Dev.Logging.Extensions.Models.MinimumLevel.Override" /> class used to override the standard logging levels.
+                The
+                <see cref="P:AStar.Dev.Logging.Extensions.Models.MinimumLevel.Override"/>
+                class used to override the standard logging levels.
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.Override">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.Override" /> class used to configure the Serilog logging level overrides.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.Override"/>
+                class used to configure the Serilog logging level overrides.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Override.MicrosoftAspNetCore">
@@ -552,7 +684,9 @@
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Override.SystemNetHttp">
             <summary>
-                The <see cref="N:System.Net.Http" /> logging level.
+                The
+                <see cref="N:System.Net.Http"/>
+                logging level.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Override.AStar">
@@ -562,7 +696,9 @@
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.Serilog">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.Serilog" /> class used to configure Serilog.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.Serilog"/>
+                class used to configure Serilog.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Serilog.Enrich">
@@ -572,32 +708,44 @@
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Serilog.WriteTo">
             <summary>
-                An array of <see cref="P:AStar.Dev.Logging.Extensions.Models.Serilog.WriteTo" /> configurations.
+                An array of
+                <see cref="P:AStar.Dev.Logging.Extensions.Models.Serilog.WriteTo"/>
+                configurations.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.Serilog.MinimumLevel">
             <summary>
-                The <see cref="P:AStar.Dev.Logging.Extensions.Models.Serilog.MinimumLevel" /> log level to use.
+                The
+                <see cref="P:AStar.Dev.Logging.Extensions.Models.Serilog.MinimumLevel"/>
+                log level to use.
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.SerilogConfig">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.SerilogConfig" /> class that contains the Serilog configuration.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.SerilogConfig"/>
+                class that contains the Serilog configuration.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.SerilogConfig.Serilog">
             <summary>
-                The <see cref="P:AStar.Dev.Logging.Extensions.Models.SerilogConfig.Serilog" /> class containing the core configuration.
+                The
+                <see cref="P:AStar.Dev.Logging.Extensions.Models.SerilogConfig.Serilog"/>
+                class containing the core configuration.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.SerilogConfig.Logging">
             <summary>
-                The <see cref="P:AStar.Dev.Logging.Extensions.Models.SerilogConfig.Logging" /> class containing the Logging configuration.
+                The
+                <see cref="P:AStar.Dev.Logging.Extensions.Models.SerilogConfig.Logging"/>
+                class containing the Logging configuration.
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Models.WriteTo">
             <summary>
-                The <see cref="T:AStar.Dev.Logging.Extensions.Models.WriteTo" /> class that configures the relevant WriteTo Serilog logger.
+                The
+                <see cref="T:AStar.Dev.Logging.Extensions.Models.WriteTo"/>
+                class that configures the relevant WriteTo Serilog logger.
             </summary>
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.WriteTo.Name">
@@ -607,7 +755,9 @@
         </member>
         <member name="P:AStar.Dev.Logging.Extensions.Models.WriteTo.Args">
             <summary>
-                An instance of <see cref="P:AStar.Dev.Logging.Extensions.Models.WriteTo.Args" /> to configure the WriteTo Serilog logger.
+                An instance of
+                <see cref="P:AStar.Dev.Logging.Extensions.Models.WriteTo.Args"/>
+                to configure the WriteTo Serilog logger.
             </summary>
         </member>
         <member name="T:AStar.Dev.Logging.Extensions.Program">
