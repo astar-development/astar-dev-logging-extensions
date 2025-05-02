@@ -20,5 +20,15 @@ public static partial class AStarEventIds
         ///     Gets the <see cref="EventId" /> preconfigured for logging a critical error
         /// </summary>
         public static EventId CriticalEventId => AStarEventIdList.CriticalError;
+
+        /// <summary>
+        ///     Gets the <see cref="EventId" /> preconfigured for logging a critical error
+        /// </summary>
+        public static EventId DebugEventId => AStarEventIdList.Debug;
+
+        /// <summary>
+        ///     Gets the <see cref="EventId" /> preconfigured for logging a critical error
+        /// </summary>
+        public static EventId InformationEventId => AStarEventIdList.Information;
     }
 }

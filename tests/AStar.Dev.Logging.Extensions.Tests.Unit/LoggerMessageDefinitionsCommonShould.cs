@@ -6,6 +6,24 @@ namespace AStar.Dev.Logging.Extensions;
 public class LoggerMessageDefinitionsCommonShould
 {
     [Fact]
+    public void DefineTheDebugeMessageAsExpected()
+    {
+        var criticalFailure = LoggerMessageDefinitionsCommon.Debug;
+
+        criticalFailure.Method.ToString().ShouldBe("Void <Define>b__1(Microsoft.Extensions.Logging.ILogger, System.String, System.Exception)");
+        criticalFailure.Target?.ToString().ShouldBe("Microsoft.Extensions.Logging.LoggerMessage+<>c__DisplayClass10_0`1[System.String]");
+    }
+
+    [Fact]
+    public void DefineTheInformationMessageAsExpected()
+    {
+        var criticalFailure = LoggerMessageDefinitionsCommon.Information;
+
+        criticalFailure.Method.ToString().ShouldBe("Void <Define>b__1(Microsoft.Extensions.Logging.ILogger, System.String, System.Exception)");
+        criticalFailure.Target?.ToString().ShouldBe("Microsoft.Extensions.Logging.LoggerMessage+<>c__DisplayClass10_0`1[System.String]");
+    }
+
+    [Fact]
     public void DefineTheCriticalFailureMessageAsExpected()
     {
         var criticalFailure = LoggerMessageDefinitionsCommon.CriticalFailure;

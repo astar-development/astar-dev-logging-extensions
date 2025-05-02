@@ -13,6 +13,14 @@ namespace AStar.Dev.Logging.Extensions;
 public partial class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, IAStarTelemetryClient telemetryClient) : ILoggerAstar<TCategoryName>
 {
     /// <inheritdoc />
+    public void LogDebug(string message)
+        => LoggerMessageDefinitionsCommon.Debug(logger, message, null);
+
+    /// <inheritdoc />
+    public void LogInformation(string message)
+        => LoggerMessageDefinitionsCommon.Information(logger, message, null);
+
+    /// <inheritdoc />
     public void LogException(Exception exception)
         => LoggerMessageDefinitionsCommon.ExceptionOccurred(logger, exception.GetBaseException().Message, exception);
 
