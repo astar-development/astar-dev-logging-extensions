@@ -19,14 +19,14 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageProjectUrl>https://github.com/astar-development/astar-dev-logging-extensions</PackageProjectUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>Add overloads to the API LoggerMessage.Define methods</PackageReleaseNotes>
+        <PackageReleaseNotes>Change from my Functional to CSharpFunctionalExtensions</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/astar-development/astar-dev-logging-extensions.git</RepositoryUrl>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <TargetFramework>net9.0</TargetFramework>
         <Title>AStar.Dev.Logging.Extensions</Title>
-        <Version>0.5.5</Version>
+        <Version>0.5.6</Version>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -38,10 +38,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="CSharpFunctionalExtensions" Version="3.6.0" />
         <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0"/>
         <PackageReference Include="AStar.Dev.Technical.Debt.Reporting" Version="0.1.0"/>
         <PackageReference Include="AStar.Dev.Utilities" Version="1.6.0"/>
-        <PackageReference Include="AStar.Dev.Functional.Extensions" Version="0.2.0"/>
         <PackageReference Include="AStar.Dev.Api.HealthChecks" Version="0.4.0"/>
         <PackageReference Include="Serilog.AspNetCore" Version="8.0.3"/>
         <PackageReference Include="Serilog.Enrichers.Span" Version="3.1.0"/>
