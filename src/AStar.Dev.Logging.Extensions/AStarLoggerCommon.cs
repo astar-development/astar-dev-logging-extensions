@@ -1,5 +1,5 @@
 using AStar.Dev.Api.HealthChecks;
-using AStar.Dev.Functional.Extensions;
+using CSharpFunctionalExtensions;
 
 namespace AStar.Dev.Logging.Extensions;
 
@@ -49,7 +49,7 @@ public partial class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, I
     {
         LogApiCallFailed(apiName, endpointName, failureMessage);
 
-        return Result<string, T>.Failure($"Call to {endpointName} failed with {failureMessage}")!;
+        return $"Call to {endpointName} failed with {failureMessage}";
     }
 
     /// <inheritdoc />
