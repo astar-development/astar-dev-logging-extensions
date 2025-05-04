@@ -26,7 +26,7 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <TargetFramework>net9.0</TargetFramework>
         <Title>AStar.Dev.Logging.Extensions</Title>
-        <Version>0.5.6</Version>
+        <Version>0.5.7</Version>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -38,7 +38,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="CSharpFunctionalExtensions" Version="3.6.0" />
+        <PackageReference Include="CSharpFunctionalExtensions" Version="3.6.0"/>
         <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0"/>
         <PackageReference Include="AStar.Dev.Technical.Debt.Reporting" Version="0.1.0"/>
         <PackageReference Include="AStar.Dev.Utilities" Version="1.6.0"/>

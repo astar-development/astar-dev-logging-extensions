@@ -1,5 +1,5 @@
 using AStar.Dev.Api.HealthChecks;
-using AStar.Dev.Functional.Extensions;
+using CSharpFunctionalExtensions;
 
 namespace AStar.Dev.Logging.Extensions;
 
