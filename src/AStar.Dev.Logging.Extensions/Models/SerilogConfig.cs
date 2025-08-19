@@ -1,17 +1,21 @@
 ﻿namespace AStar.Dev.Logging.Extensions.Models;
 
 /// <summary>
-///     The <see cref="SerilogConfig" /> class that contains the Serilog configuration.
+///     Represents the configuration for Serilog logging within the application.
+///     This class provides properties to define the setup for logging,
+///     including Serilog-related configuration and general logging options.
 /// </summary>
-public class SerilogConfig
+public sealed class SerilogConfig
 {
     /// <summary>
-    ///     The <see cref="Serilog" /> class containing the core configuration.
+    ///     Represents the configuration for Serilog logging.
     /// </summary>
     public Serilog Serilog { get; set; } = new();
 
     /// <summary>
-    ///     The <see cref="Logging" /> class containing the Logging configuration.
+    ///     Represents the configuration for standard logging in the application.
+    ///     This class provides properties to define logging behavior, including settings
+    ///     for console output and Application Insights integration.
     /// </summary>
     public Logging Logging { get; set; } = new();
 }

@@ -1,22 +1,22 @@
 ﻿namespace AStar.Dev.Logging.Extensions.Models;
 
 /// <summary>
-///     The <see cref="Override" /> class used to configure the Serilog logging level overrides.
+///     Represents a configuration override for specific logging domains or namespaces.
 /// </summary>
-public class Override
+public sealed class Override
 {
     /// <summary>
-    ///     The Microsoft AspNetCore logging level.
+    ///     The Microsoft.AspNetCore logging level override configuration.
     /// </summary>
     public string MicrosoftAspNetCore { get; set; } = string.Empty;
 
     /// <summary>
-    ///     The <see cref="System.Net.Http" /> logging level.
+    ///     The System.Net.Http logging level override configuration.
     /// </summary>
     public string SystemNetHttp { get; set; } = string.Empty;
 
     /// <summary>
-    ///     The AStar-specific logging level.
+    ///     The logging level override configuration specific to the AStar namespace or domain.
     /// </summary>
     public string AStar { get; set; } = string.Empty;
 }

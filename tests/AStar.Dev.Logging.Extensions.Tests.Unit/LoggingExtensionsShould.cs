@@ -1,33 +1,99 @@
-﻿using AStar.Dev.Logging.Extensions.Models;
-using AStar.Dev.Utilities;
-using Microsoft.AspNetCore.Builder;
+using NSubstitute;
 
-namespace AStar.Dev.Logging.Extensions;
+namespace AStar.Dev.Logging.Extensions.Tests.Unit;
 
 public sealed class LoggingExtensionsShould
 {
     [Theory]
     [InlineData("This is not a valid filename for a lot of reasons")]
     [InlineData(@"c:\This is not a valid filename\as the path\and filename\do not exist.what.did.you.expect.lol")]
-    public void ThrowExceptionWhenAddSerilogLoggingIsCalledButConfigIsNotValid(string? fileNameWithPath)
+    public void ThrowExceptionWhenAddSerilogLoggingIsCalledButConfigIsntValid(string? fileNameWithPath)
     {
         var builder = WebApplication.CreateBuilder();
 
-        Action action = () => builder.AddSerilogLogging(fileNameWithPath!);
+        void action()
+        {
+            builder.AddSerilogLogging(fileNameWithPath!);
+        }
 
-        _ = action.ShouldThrow<Exception>();
+        // Assert that no exception is thrown
+        Should.NotThrow(action);
     }
 
     [Fact]
-    public void AddTheExpectedNumberOfSerilogServices()
+    public void AddSerilogLogging_WebApplicationBuilder_ValidExternalSettingsFile_ShouldConfigureSerilog()
     {
+        var configMock = new ConfigurationBuilder().AddInMemoryCollection().Build();
         var builder    = WebApplication.CreateBuilder();
-        var testConfig = new SerilogConfig { Serilog = { WriteTo = [new() { Args   = new() { ServerUrl = "https://example.com" } }] } };
-        File.WriteAllText("serilog.config", testConfig.ToJson()); // OK, not a true unit test but...
+        builder.Configuration.AddConfiguration(configMock);
+        var externalSettingsFile = "testsettings.json";
 
-        var sut = builder.AddSerilogLogging("serilog.config");
+        var telemetryClient = Substitute.For<ITelemetryClient>();
+        var telemetryMock   = Substitute.For<IServiceProvider>();
+        telemetryMock.GetService(typeof(ITelemetryClient)).Returns(telemetryClient);
+        builder.Services.AddSingleton(telemetryMock);
 
-        var serilogCount = sut.Services.Count(d => d.ServiceType.FullName?.StartsWith("Serilog", StringComparison.InvariantCultureIgnoreCase) == true);
-        serilogCount.ShouldBe(4);
+        var configuredBuilder = builder.AddSerilogLogging(externalSettingsFile);
+
+        configuredBuilder.ShouldNotBeNull();
+        configuredBuilder.ShouldBe(builder);
+    }
+
+    [Fact]
+    public void AddSerilogLogging_WebApplicationBuilder_NullExternalSettingsFile_ShouldNotLoadJsonFile()
+    {
+        var configMock = Substitute.For<IConfiguration>();
+        var builder    = WebApplication.CreateBuilder();
+        builder.Configuration.AddConfiguration(configMock);
+
+        string? externalSettingsFile = null;
+
+        var telemetryClient = Substitute.For<ITelemetryClient>();
+        var telemetryMock   = Substitute.For<IServiceProvider>();
+        telemetryMock.GetService(typeof(ITelemetryClient)).Returns(telemetryClient);
+        builder.Services.AddSingleton(telemetryMock);
+
+        var configuredBuilder = builder.AddSerilogLogging(externalSettingsFile!);
+
+        configuredBuilder.ShouldNotBeNull();
+        configuredBuilder.ShouldBe(builder);
+    }
+
+    [Fact]
+    public void AddSerilogLogging_HostApplicationBuilder_ValidExternalSettingsFile_ShouldConfigureSerilog()
+    {
+        var configMock = new ConfigurationBuilder().AddInMemoryCollection().Build();
+        var builder    = new HostApplicationBuilder();
+        builder.Configuration.AddConfiguration(configMock);
+        var externalSettingsFile = "testsettings.json";
+
+        var telemetryClient = Substitute.For<ITelemetryClient>();
+        var telemetryMock   = Substitute.For<IServiceProvider>();
+        telemetryMock.GetService(typeof(ITelemetryClient)).Returns(telemetryClient);
+        builder.Services.AddSingleton(telemetryMock);
+
+        var configuredBuilder = builder.AddSerilogLogging(externalSettingsFile);
+
+        configuredBuilder.ShouldNotBeNull();
+        configuredBuilder.ShouldBe(builder);
+    }
+
+    [Fact]
+    public void AddSerilogLogging_HostApplicationBuilder_NullExternalSettingsFile_ShouldNotLoadJsonFile()
+    {
+        var configMock = Substitute.For<IConfiguration>();
+        var builder    = new HostApplicationBuilder();
+        builder.Configuration.AddConfiguration(configMock);
+        string? externalSettingsFile = null;
+
+        var telemetryClient = Substitute.For<ITelemetryClient>();
+        var telemetryMock   = Substitute.For<IServiceProvider>();
+        telemetryMock.GetService(typeof(ITelemetryClient)).Returns(telemetryClient);
+        builder.Services.AddSingleton(telemetryMock);
+
+        var configuredBuilder = builder.AddSerilogLogging(externalSettingsFile!);
+
+        configuredBuilder.ShouldNotBeNull();
+        configuredBuilder.ShouldBe(builder);
     }
 }

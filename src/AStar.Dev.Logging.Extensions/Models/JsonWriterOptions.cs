@@ -1,12 +1,16 @@
 ﻿namespace AStar.Dev.Logging.Extensions.Models;
 
 /// <summary>
-///     The <see cref="JsonWriterOptions" /> class containing the configuration options.
+///     Represents options for configuring the behavior of a JSON writer.
 /// </summary>
-public class JsonWriterOptions
+public sealed class JsonWriterOptions
 {
     /// <summary>
-    ///     Whether to use indented JSON or not. The default is <see langword="false" />.
+    ///     Gets or sets a value indicating whether the JSON output should be indented.
+    ///     If set to <see langword="true" />, the JSON will be formatted with additional
+    ///     whitespace for readability (e.g., line breaks and indentation).
+    ///     If set to <see langword="false" />, the JSON will be written as a single line
+    ///     without extra whitespace, minimizing the output size.
     /// </summary>
     public bool Indented { get; set; }
 }

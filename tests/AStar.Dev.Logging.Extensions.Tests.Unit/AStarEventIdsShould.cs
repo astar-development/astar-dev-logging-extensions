@@ -1,15 +1,17 @@
-using JetBrains.Annotations;
+namespace AStar.Dev.Logging.Extensions.Tests.Unit;
 
-namespace AStar.Dev.Logging.Extensions;
-
-[TestSubject(typeof(AStarEventIds.Ui))]
-public class AStarEventIdsUiShould
+[TestSubject(typeof(AStarEventIds))]
+public class AStarEventIdsShould
 {
     [Fact]
-    public void ContainTheExpectedPageViewEventId()
-        => AStarEventIds.Ui.PageView.Id.ShouldBe(1_000);
+    public void PageView_HasExpectedIdAndName()
+    {
+        const int    expectedId   = 1000;
+        const string expectedName = "Page view";
 
-    [Fact]
-    public void ContainTheExpectedPageViewName()
-        => AStarEventIds.Ui.PageView.Name.ShouldBe("Page View");
+        var eventId = AStarEventIds.PageView;
+
+        eventId.Id.ShouldBe(expectedId);
+        eventId.Name.ShouldBe(expectedName);
+    }
 }

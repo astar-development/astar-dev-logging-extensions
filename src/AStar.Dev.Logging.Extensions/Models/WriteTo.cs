@@ -1,17 +1,17 @@
 ﻿namespace AStar.Dev.Logging.Extensions.Models;
 
 /// <summary>
-///     The <see cref="WriteTo" /> class that configures the relevant WriteTo Serilog logger.
+///     Represents the configuration target for writing logs in a Serilog configuration.
 /// </summary>
-public class WriteTo
+public sealed class WriteTo
 {
     /// <summary>
-    ///     The Name of the WriteTo option.
+    ///     Gets or sets the name of the logging sink to which log events are written.
     /// </summary>
     public string Name { get; set; } = string.Empty;
 
     /// <summary>
-    ///     An instance of <see cref="Args" /> to configure the WriteTo Serilog logger.
+    ///     Gets or sets the arguments for configuring the logging sink.
     /// </summary>
     public Args Args { get; set; } = new();
 }
