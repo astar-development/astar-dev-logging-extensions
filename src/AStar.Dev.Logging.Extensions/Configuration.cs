@@ -1,13 +1,17 @@
 ﻿namespace AStar.Dev.Logging.Extensions;
 
 /// <summary>
-///     The <see cref="Configuration" /> class is a container for any applicable constants to use during logging
-///     configuration.
+///     Provides configuration settings for the logging extensions.
 /// </summary>
 public static class Configuration
 {
     /// <summary>
-    ///     Returns the default value for the External Settings File used to configure the logging extensions.
+    ///     Gets the default filename for the external logging settings configuration file.
     /// </summary>
+    /// <remarks>
+    ///     The value returned by <c>ExternalSettingsFile</c> is a constant string representing
+    ///     the filename used to store external logging configuration settings. This property
+    ///     ensures consistent reference to the expected configuration file across the application.
+    /// </remarks>
     public static string ExternalSettingsFile => "astar-logging-settings.json";
 }

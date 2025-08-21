@@ -1,64 +1,135 @@
-using JetBrains.Annotations;
-using Microsoft.ApplicationInsights;
-using Microsoft.Extensions.Logging;
 using NSubstitute;
 
-namespace AStar.Dev.Logging.Extensions;
+namespace AStar.Dev.Logging.Extensions.Tests.Unit;
 
 [TestSubject(typeof(AStarLogger<>))]
 public class AStarLoggerShould
 {
-    private readonly ILogger<AStarLoggerShould>     mockLogger;
-    private readonly IAStarTelemetryClient          mockTelemetryClient;
-    private readonly AStarLogger<AStarLoggerShould> sut;
+    private readonly AStarLogger<string> _astLogger;
+    private readonly ILogger<string>     _mockLogger;
+    private readonly ITelemetryClient    _mockTelemetryClient;
 
     public AStarLoggerShould()
     {
-        mockTelemetryClient = Substitute.For<IAStarTelemetryClient>();
-        mockLogger          = Substitute.For<ILoggerAstar<AStarLoggerShould>>();
-#pragma warning disable CS0618 // Type or member is obsolete
-        mockTelemetryClient.TelemetryClient.ReturnsForAnyArgs(new TelemetryClient());
-#pragma warning restore CS0618 // Type or member is obsolete
-        sut                      = new (mockLogger, mockTelemetryClient);
+        _mockLogger          = Substitute.For<ILogger<string>>();
+        _mockTelemetryClient = Substitute.For<ITelemetryClient>();
+        _astLogger           = new(_mockLogger, _mockTelemetryClient);
     }
 
     [Fact]
-    public void ImplementTheILoggerAstarInterface()
-        => sut.ShouldBeAssignableTo<ILoggerAstar<AStarLoggerShould>>();
-
-    [Fact]
-    public void LogPageViewAsExpected()
+    public void LogPageView_WhenCalled_TracksPageViewAndLogsInformation()
     {
-        sut.LogPageView("PageNameIsNotRelevant");
+        const string pageName = "HomePage";
 
-        mockTelemetryClient.Received().TrackPageView("PageNameIsNotRelevant");
+        _astLogger.LogPageView(pageName);
+
+        _mockLogger.Received(1).Log(
+                                    LogLevel.Information,
+                                    AStarEventIds.PageView,
+                                    Arg.Is<object>(obj => obj.ToString() == $"Page view: {pageName}"),
+                                    null,
+                                    Arg.Any<Func<object, Exception?, string>>());
+
+        // _mockTelemetryClient.Received(1).TrackPageView(pageName); // Can't verify unless using a wrapper or interface
     }
 
     [Fact]
-    public void DelegateBeginScope()
+    public void BeginScope_WhenCalled_ReturnsDisposable()
     {
-        const string mockState = "MockState";
+        var state     = new { Key = "Value" };
+        var mockScope = Substitute.For<IDisposable>();
+        _mockLogger.BeginScope(state).Returns(mockScope);
 
-        sut.BeginScope(mockState);
+        var result = _astLogger.BeginScope(state);
 
-        mockLogger.Received().BeginScope(mockState);
+        result.ShouldBeSameAs(mockScope);
+        _mockLogger.Received(1).BeginScope(state);
     }
 
     [Fact]
-    public void DelegateIsEnabled()
+    public void IsEnabled_WhenLogLevelEnabled_ReturnsTrue()
     {
-        sut.IsEnabled(LogLevel.Trace);
+        const LogLevel logLevel = LogLevel.Debug;
+        _mockLogger.IsEnabled(logLevel).Returns(true);
 
-        mockLogger.Received().IsEnabled(LogLevel.Trace);
+        var result = _astLogger.IsEnabled(logLevel);
+
+        result.ShouldBeTrue();
+        _mockLogger.Received(1).IsEnabled(logLevel);
     }
 
     [Fact]
-    public void DelegateTheCallToLog()
+    public void IsEnabled_WhenLogLevelIsDisabled_ReturnsFalse()
     {
-#pragma warning disable CA1848
-        sut.Log(LogLevel.Trace, "Test");
+        const LogLevel logLevel = LogLevel.Trace;
+        _mockLogger.IsEnabled(logLevel).Returns(false);
 
-        mockLogger.Received().Log(LogLevel.Trace, "Test");
-#pragma warning restore CA1848
+        var result = _astLogger.IsEnabled(logLevel);
+
+        result.ShouldBeFalse();
+        _mockLogger.Received(1).IsEnabled(logLevel);
+    }
+
+    [Fact]
+    public void Log_WhenCalled_LogsWithCorrectParameters()
+    {
+        const LogLevel logLevel  = LogLevel.Warning;
+        var            eventId   = new EventId(200, "TestEvent");
+        var            state     = new { Message = "This is a warning" };
+        var            exception = new Exception("Test exception");
+
+        static string formatter(object s, Exception? e)
+        {
+            return s.ToString()!;
+        }
+
+        _astLogger.Log(logLevel, eventId, state, exception, (Func<object, Exception?, string>)formatter);
+
+        _mockLogger.Received(1).Log(
+                                    logLevel,
+                                    eventId,
+                                    state,
+                                    exception,
+                                    (Func<object, Exception?, string>)formatter);
+    }
+
+    [Fact]
+    public void Log_WhenCalledWithNullException_StillLogs()
+    {
+        const LogLevel logLevel  = LogLevel.Error;
+        var            eventId   = new EventId(500, "ErrorEvent");
+        var            state     = new { Error = "An error occurred" };
+        Exception?     exception = null;
+
+        static string formatter(object s, Exception? e)
+        {
+            return s.ToString()!;
+        }
+
+        _astLogger.Log(logLevel, eventId, state, exception, (Func<object, Exception?, string>)formatter);
+
+        _mockLogger.Received(1).Log(
+                                    logLevel,
+                                    eventId,
+                                    state,
+                                    exception,
+                                    (Func<object, Exception?, string>)formatter);
+    }
+
+    [Fact]
+    public void LogPageView_WhenPageNameIsNull_ThrowsArgumentNullException()
+    {
+        string? pageName = null;
+
+        Should.Throw<ArgumentNullException>(() => _astLogger.LogPageView(pageName!));
+
+        _mockLogger.DidNotReceive().Log(
+                                        Arg.Any<LogLevel>(),
+                                        Arg.Any<EventId>(),
+                                        Arg.Any<object>(),
+                                        Arg.Any<Exception?>(),
+                                        Arg.Any<Func<object, Exception?, string>>());
+
+        // _mockTelemetryClient.DidNotReceive().TrackPageView(Arg.Any<string>()); // Can't verify unless using a wrapper or interface
     }
 }

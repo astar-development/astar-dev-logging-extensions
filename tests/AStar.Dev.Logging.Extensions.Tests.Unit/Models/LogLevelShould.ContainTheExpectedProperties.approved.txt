@@ -1,5 +1,0 @@
-﻿{
-  "default": "",
-  "microsoftAspNetCore": "",
-  "aStar": ""
-}

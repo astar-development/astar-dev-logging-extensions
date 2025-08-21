@@ -4,7 +4,8 @@ using Microsoft.ApplicationInsights.Extensibility;
 namespace AStar.Dev.Logging.Extensions;
 
 /// <summary>
-///     The <see cref="CloudRoleNameTelemetryInitializer" /> class implements the <see cref="ITelemetryInitializer" /> interface to add the Cloud Role Name to the Application Insights logging.
+///     A telemetry initializer responsible for setting the Cloud Role Name
+///     and Instrumentation Key in the telemetry context.
 /// </summary>
 /// <param name="roleOrApplicationName">The Role / Application Name to configure Application Insights with</param>
 /// <param name="instrumentationKey">The Instrumentation Key to configure Application Insights with</param>
@@ -13,8 +14,21 @@ public sealed class CloudRoleNameTelemetryInitializer(string roleOrApplicationNa
     /// <inheritdoc />
     public void Initialize(ITelemetry telemetry)
     {
-        telemetry.Context.Cloud.RoleName     = roleOrApplicationName;
+        if(telemetry == null)
+        {
+            return;
+        }
 
-        telemetry.Context.InstrumentationKey = instrumentationKey;
+        // Set RoleName to provided value if not already set or is null/empty, otherwise set to empty string if still null
+        if(string.IsNullOrEmpty(telemetry.Context.Cloud.RoleName))
+        {
+            telemetry.Context.Cloud.RoleName = roleOrApplicationName ?? string.Empty;
+        }
+
+        // Set InstrumentationKey to provided value if not already set or is null/empty, otherwise set to empty string if still null
+        if(string.IsNullOrEmpty(telemetry.Context.InstrumentationKey))
+        {
+            telemetry.Context.InstrumentationKey = instrumentationKey ?? string.Empty;
+        }
     }
 }

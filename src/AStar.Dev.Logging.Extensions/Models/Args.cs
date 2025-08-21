@@ -1,12 +1,16 @@
 ﻿namespace AStar.Dev.Logging.Extensions.Models;
 
 /// <summary>
-///     The <see cref="Args" /> class used by Serilog WriteTo section of the logging configuration.
+///     Represents the configuration arguments for logging components.
 /// </summary>
-public class Args
+public sealed class Args
 {
     /// <summary>
-    ///     The Serilog server Url.
+    ///     Gets or sets the URL of the server used for logging purposes.
     /// </summary>
+    /// <remarks>
+    ///     The default value is an empty string if not explicitly set.
+    ///     This property can be used to configure the target server address for logging connectivity.
+    /// </remarks>
     public string ServerUrl { get; set; } = string.Empty;
 }

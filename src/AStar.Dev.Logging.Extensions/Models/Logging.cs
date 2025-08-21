@@ -1,17 +1,20 @@
 ﻿namespace AStar.Dev.Logging.Extensions.Models;
 
 /// <summary>
-///     The <see cref="Logging" /> class used to configure the standard logging.
+///     Represents the configuration settings for logging within the system.
 /// </summary>
-public class Logging
+/// <remarks>
+///     This class provides properties for configuring console logging and Application Insights logging.
+/// </remarks>
+public sealed class Logging
 {
     /// <summary>
-    ///     An instance of <see cref="Console" /> class used to configure the Console logger.
+    ///     Represents the configuration settings for console-based logging within the application.
     /// </summary>
     public Console Console { get; set; } = new();
 
     /// <summary>
-    ///     An instance of <see cref="ApplicationInsights" /> class used to configure the Application Insights logger.
+    ///     Represents the configuration settings for Application Insights logging functionality.
     /// </summary>
     public ApplicationInsights ApplicationInsights { get; set; } = new();
 }

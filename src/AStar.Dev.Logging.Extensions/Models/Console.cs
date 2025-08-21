@@ -1,17 +1,17 @@
 ﻿namespace AStar.Dev.Logging.Extensions.Models;
 
 /// <summary>
-///     The <see cref="Console" /> class used by Serilog Console section of the logging configuration.
+///     Represents a console logging configuration for formatting output in a logging system.
 /// </summary>
-public class Console
+public sealed class Console
 {
     /// <summary>
-    ///     The Formatter Name to use.
+    ///     Gets or sets the name of the formatter used for console logging output.
     /// </summary>
     public string FormatterName { get; set; } = string.Empty;
 
     /// <summary>
-    ///     The <see cref="FormatterOptions" /> class used to supply the Formatter Options to use.
+    ///     Gets or sets the options for configuring the console log formatter.
     /// </summary>
     public FormatterOptions FormatterOptions { get; set; } = new();
 }
