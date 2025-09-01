@@ -68,7 +68,7 @@ public static class LoggingExtensions
         }
 
         // Register a default TelemetryConfiguration if not present, for test/integration scenarios.
-        builder.Services.AddSingleton<TelemetryConfiguration>(_ => new());
+        _ = builder.Services.AddSingleton<TelemetryConfiguration>(_ => new());
         var serviceProvider = builder.Services.BuildServiceProvider();
 
         var logger = new LoggerConfiguration()
