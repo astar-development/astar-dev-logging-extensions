@@ -13,8 +13,8 @@ public sealed class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, IT
     public void LogPageView(string pageName)
     {
         ArgumentNullException.ThrowIfNull(pageName);
+        LogMessageTemplate.NotFound(logger, "/missing-resource");
 
-        logger.LogInformation(AStarEventIds.PageView, "Page view: {PageView}", pageName);
         telemetryClient.TrackPageView(pageName);
     }
 
@@ -25,6 +25,6 @@ public sealed class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, IT
     public bool IsEnabled(LogLevel logLevel) => logger.IsEnabled(logLevel);
 
     /// <inheritdoc />
-    public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter) =>
-        logger.Log(logLevel, eventId, state, exception, formatter);
+    public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
+        => logger.Log(logLevel, eventId, state, exception, formatter);
 }

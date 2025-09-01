@@ -8,6 +8,14 @@ namespace AStar.Dev.Logging.Extensions;
 public static partial class LogMessageTemplate
 {
     /// <summary>
+    ///     Logs an informational message indicating that a specific page has been viewed.
+    /// </summary>
+    /// <param name="logger">The logger to be used for logging the event.</param>
+    /// <param name="pageName">The name of the page that was viewed.</param>
+    [LoggerMessage(EventId = 200, Level = LogLevel.Information, Message = "Page `{PageName}` viewed.")]
+    public static partial void PageView(ILogger logger, string pageName);
+
+    /// <summary>
     ///     Logs a warning message for a Bad Request (400) event, including the requested path.
     /// </summary>
     /// <param name="logger">The logger to be used for logging the event.</param>

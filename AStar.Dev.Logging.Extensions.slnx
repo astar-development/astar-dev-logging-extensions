@@ -1,0 +1,17 @@
+<Solution>
+    <Folder Name="/.github/">
+        <File Path=".github/dependabot.yml"/>
+    </Folder>
+    <Folder Name="/.github/workflows/">
+        <File Path=".github/workflows/dotnet.yml"/>
+    </Folder>
+    <Folder Name="/Solution Items/">
+        <File Path="blog-draft.md"/>
+    </Folder>
+    <Folder Name="/src/">
+        <Project Path="src/AStar.Dev.Logging.Extensions/AStar.Dev.Logging.Extensions.csproj"/>
+    </Folder>
+    <Folder Name="/tests/">
+        <Project Path="tests/AStar.Dev.Logging.Extensions.Tests.Unit/AStar.Dev.Logging.Extensions.Tests.Unit.csproj"/>
+    </Folder>
+</Solution>
