@@ -22,7 +22,7 @@
         <PackageId>AStar.Dev.Logging.Extensions</PackageId>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>Readme.md</PackageReadmeFile>
-        <PackageReleaseNotes>Add some LoggerMessage templates to cover the core use-cases</PackageReleaseNotes>
+        <PackageReleaseNotes>Add additional LoggerMessage templates to cover the basic use-cases missed previously</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageTags>Logging Application Insights Serilog LoggerMessage Templates</PackageTags>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -31,7 +31,7 @@
         <RepositoryUrl>https://github.com/astar-development/astar-dev-logging-extensions.git</RepositoryUrl>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <Title>AStar.Dev.Logging.Extensions</Title>
-        <Version>0.6.1</Version>
+        <Version>0.6.2</Version>
     </PropertyGroup>
 
     <ItemGroup>

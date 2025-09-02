@@ -5,7 +5,7 @@ namespace AStar.Dev.Logging.Extensions;
 /// <summary>
 ///     Provides static methods for logging specific HTTP-related events using strongly-typed logging templates.
 /// </summary>
-public static partial class LogMessageTemplate
+public static partial class LogMessage
 {
     /// <summary>
     ///     Logs an informational message indicating that a specific page has been viewed.
@@ -14,6 +14,64 @@ public static partial class LogMessageTemplate
     /// <param name="pageName">The name of the page that was viewed.</param>
     [LoggerMessage(EventId = 200, Level = LogLevel.Information, Message = "Page `{PageName}` viewed.")]
     public static partial void PageView(ILogger logger, string pageName);
+
+    /// <summary>
+    ///     Logs an informational message indicating that a specific page has been viewed.
+    /// </summary>
+    /// <param name="logger">The logger to be used for logging the event.</param>
+    /// <param name="pageName">The name of the page that was viewed.</param>
+    [LoggerMessage(EventId = 200, Level = LogLevel.Information, Message = "Page `{PageName}` viewed.")]
+    public static partial void Trace(ILogger logger, string pageName);
+
+    /// <summary>
+    ///     Logs a debug message for the specified location.
+    /// </summary>
+    /// <param name="logger">The logger to be used for logging the event.</param>
+    /// <param name="location">The location of the event.</param>
+    /// <param name="debugMessage">The debug message to log.</param>
+    [LoggerMessage(EventId = 200, Level = LogLevel.Debug, Message = "{Location} has raised: `{DebugMessage}`.")]
+    public static partial void Debug(ILogger logger, string location, string debugMessage);
+
+    /// <summary>
+    ///     Logs an informational message for the specified location.
+    /// </summary>
+    /// <param name="logger">The logger to be used for logging the event.</param>
+    /// <param name="location">The location of the event.</param>
+    /// <param name="informationMessage">The information message to log.</param>
+    [LoggerMessage(EventId = 200, Level = LogLevel.Information, Message = "{Location} has raised: `{InformationMessage}`.")]
+    public static partial void Information(ILogger logger, string location, string informationMessage);
+
+    /// <summary>
+    /// Logs an informational message with details about a specific API call.
+    /// </summary>
+    /// <param name="logger">The logger to be used for logging the event.</param>
+    /// <param name="location">The location where the event occurred.</param>
+    /// <param name="httpRequest">A summary of the request.</param>
+    /// <param name="httpMethod">The HTTP Method (GET / POST etc.)</param>
+    /// <param name="apiEndpoint">The API Endpoint called.</param>
+    /// <param name="apiName">The name of the API.</param>
+    [LoggerMessage(EventId = 200, Level = LogLevel.Information, Message = "{Location} - request: {HttpRequest}, Method: {HttpMethod}, apiEndpoint: {ApiEndpoint}, apiName: {ApiName}.")]
+    public static partial void Information(ILogger logger, string location, string httpRequest, string httpMethod, string apiEndpoint, string apiName);
+
+    /// <summary>
+    ///     Logs a warning message for the specified location.
+    /// </summary>
+    /// <param name="logger">The logger to be used for logging the event.</param>
+    /// <param name="location">The location of the event.</param>
+    /// <param name="warningMessage">The warning message to log.</param>
+    [LoggerMessage(EventId = 400, Level = LogLevel.Warning, Message = "{Location} has raised: `{WarningMessage}`.")]
+    public static partial void Warning(ILogger logger, string location, string warningMessage);
+
+    /// <summary>
+    /// Logs a critical exception event, providing detailed information about the exception type, message, and stack trace.
+    /// </summary>
+    /// <param name="logger">The logger used to log the event.</param>
+    /// <param name="location">The location of the event.</param>
+    /// <param name="exceptionType">The type of the exception being logged.</param>
+    /// <param name="exceptionMessage">The message associated with the exception.</param>
+    /// <param name="exceptionStack">The stack trace of the exception.</param>
+    [LoggerMessage(EventId = 500, Level = LogLevel.Error, Message = "{Location} encountered {exceptionType} with `{exceptionMessage}`\nExceptionStack: {exceptionStack}")]
+    public static partial void LogException(ILogger logger, string location, string exceptionType, string exceptionMessage, string exceptionStack);
 
     /// <summary>
     ///     Logs a warning message for a Bad Request (400) event, including the requested path.
