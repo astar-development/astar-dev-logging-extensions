@@ -13,7 +13,7 @@ public sealed class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, IT
     public void LogPageView(string pageName)
     {
         ArgumentNullException.ThrowIfNull(pageName);
-        LogMessageTemplate.NotFound(logger, "/missing-resource");
+        LogMessage.NotFound(logger, "/missing-resource");
 
         telemetryClient.TrackPageView(pageName);
     }

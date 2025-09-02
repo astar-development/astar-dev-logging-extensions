@@ -1,6 +1,6 @@
 namespace AStar.Dev.Logging.Extensions.Tests.Unit;
 
-[TestSubject(typeof(LogMessageTemplate))]
+[TestSubject(typeof(LogMessage))]
 public class LogMessageTemplateShould
 {
     [Fact]
@@ -9,7 +9,7 @@ public class LogMessageTemplateShould
         var          logger = new FakeLogger();
         const string path   = "/test-path";
 
-        LogMessageTemplate.BadRequest(logger, path);
+        LogMessage.BadRequest(logger, path);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];
@@ -25,7 +25,7 @@ public class LogMessageTemplateShould
         var          logger = new FakeLogger();
         const string path   = "/unauthorized-path";
 
-        LogMessageTemplate.Unauthorized(logger, path);
+        LogMessage.Unauthorized(logger, path);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];
@@ -42,7 +42,7 @@ public class LogMessageTemplateShould
         const string path   = "/forbidden-path";
         const string user   = "test-user";
 
-        LogMessageTemplate.Forbidden(logger, path, user);
+        LogMessage.Forbidden(logger, path, user);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];
@@ -58,7 +58,7 @@ public class LogMessageTemplateShould
         var          logger = new FakeLogger();
         const string path   = "/not-found-path";
 
-        LogMessageTemplate.NotFound(logger, path);
+        LogMessage.NotFound(logger, path);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];
@@ -74,7 +74,7 @@ public class LogMessageTemplateShould
         var          logger = new FakeLogger();
         const string path   = "/conflict-path";
 
-        LogMessageTemplate.Conflict(logger, path);
+        LogMessage.Conflict(logger, path);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];
@@ -90,7 +90,7 @@ public class LogMessageTemplateShould
         var          logger = new FakeLogger();
         const string path   = "/unprocessable-entity-path";
 
-        LogMessageTemplate.UnprocessableEntity(logger, path);
+        LogMessage.UnprocessableEntity(logger, path);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];
@@ -106,7 +106,7 @@ public class LogMessageTemplateShould
         var          logger = new FakeLogger();
         const string path   = "/too-many-requests";
 
-        LogMessageTemplate.TooManyRequests(logger, path);
+        LogMessage.TooManyRequests(logger, path);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];
@@ -122,7 +122,7 @@ public class LogMessageTemplateShould
         var          logger = new FakeLogger();
         const string path   = "/internal-server-error";
 
-        LogMessageTemplate.InternalServerError(logger, path);
+        LogMessage.InternalServerError(logger, path);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];
@@ -138,7 +138,7 @@ public class LogMessageTemplateShould
         var          logger = new FakeLogger();
         const string path   = "/bad-gateway";
 
-        LogMessageTemplate.BadGateway(logger, path);
+        LogMessage.BadGateway(logger, path);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];
@@ -154,7 +154,7 @@ public class LogMessageTemplateShould
         var          logger = new FakeLogger();
         const string path   = "/service-unavailable";
 
-        LogMessageTemplate.ServiceUnavailable(logger, path);
+        LogMessage.ServiceUnavailable(logger, path);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];
@@ -170,7 +170,7 @@ public class LogMessageTemplateShould
         var          logger = new FakeLogger();
         const string path   = "/gateway-timeout";
 
-        LogMessageTemplate.GatewayTimeout(logger, path);
+        LogMessage.GatewayTimeout(logger, path);
 
         logger.Logs.Count.ShouldBe(1);
         var log = logger.Logs[0];

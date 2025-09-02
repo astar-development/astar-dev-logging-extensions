@@ -8,7 +8,7 @@ This guide is for beginner or junior developers (and anyone who enjoys a touch o
 - **AStarLogger**: An all-in-one logger and telemetry wonder.
 - **LoggingExtensions**: Easy-to-use methods for wiring up Serilog and Application Insights.
 - **SerilogConfigure**: The configuration behind AStar logging magic.
-- **LogMessageTemplate**: Strongly-typed, reusable logging templates—because why type the same message twice?
+- **LogMessage**: Strongly-typed, reusable logging templates—because why type the same message twice?
 
 Ready? Grab your logging toolbox and let’s get started! 🚀
 
@@ -105,7 +105,7 @@ What’s happening here? It’s setting up these critical parts:
 2. Console output gets formatted with timestamps, log levels, and exceptions.
 3. External configuration (`serilogsettings.json`) is loaded.
 
-### 5. **🛠️ LogMessageTemplate: Predefined Messages for Convenience**
+### 5. **🛠️ LogMessage: Predefined Messages for Convenience**
 
 Why write the same logging message repeatedly when you can have reusable, strongly-typed templates with `[LoggerMessage]`?
 **A Simple Example:**
@@ -114,10 +114,10 @@ Why write the same logging message repeatedly when you can have reusable, strong
 var logger = Substitute.For<ILogger>();
 
 // Log a 400 (Bad Request)
-LogMessageTemplate.BadRequest(logger, "/example-path");
+LogMessage.BadRequest(logger, "/example-path");
 
 // Log a 404 (Not Found)
-LogMessageTemplate.NotFound(logger, "/missing-resource");
+LogMessage.NotFound(logger, "/missing-resource");
 ```
 
 These helper methods will output descriptive log entries like:
@@ -149,7 +149,7 @@ app.MapGet("/", (ILogger<AStarLogger<string>> logger, ITelemetryClient telemetry
 
     astarLogger.LogPageView("HomePage"); // Logs and tracks telemetry
     logger.LogWarning("This is a warning log.");
-    LogMessageTemplate.NotFound(logger, "/missing-resource");
+    LogMessage.NotFound(logger, "/missing-resource");
 
     return Results.Ok("Check your logs for structured awesomeness.");
 });
@@ -171,7 +171,7 @@ Searching through unstructured logs is like trying to find Waldo in a snowstorm.
 - **👨‍🚀 AStarLogger** combines structured logs with telemetry tracking.
 - **🔌 LoggingExtensions** simplifies Serilog and Application Insights configuration.
 - **📋 SerilogConfigure** ensures your logs are sent to reliable sinks.
-- **🛠️ LogMessageTemplate** makes strongly-typed reusable logs.
+- **🛠️ LogMessage** makes strongly-typed reusable logs.
 
 ### 🚀 Closing Logs
 
