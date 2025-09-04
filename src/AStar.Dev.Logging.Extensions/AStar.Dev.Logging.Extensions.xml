@@ -22,7 +22,7 @@
             </summary>
             <typeparam name="TCategoryName">The category name for the logger, typically derived from the type being logged.</typeparam>
         </member>
-        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AStar.Dev.Logging.Extensions.ITelemetryClient)">
+        <member name="M:AStar.Dev.Logging.Extensions.AStarLogger`1.#ctor(Microsoft.Extensions.Logging.ILogger{`0},Microsoft.ApplicationInsights.TelemetryClient)">
             <summary>
                 Provides an implementation of <see cref="T:AStar.Dev.Logging.Extensions.ILoggerAstar`1" /> that integrates application telemetry tracking
                 with structured logging for enhanced observability in A* applications.

@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using Microsoft.ApplicationInsights;
 
 namespace AStar.Dev.Logging.Extensions;
 
@@ -7,7 +8,7 @@ namespace AStar.Dev.Logging.Extensions;
 ///     with structured logging for enhanced observability in A* applications.
 /// </summary>
 /// <typeparam name="TCategoryName">The category name for the logger, typically derived from the type being logged.</typeparam>
-public sealed class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, ITelemetryClient telemetryClient) : ILoggerAstar<TCategoryName>
+public sealed class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, Microsoft.ApplicationInsights.TelemetryClient telemetryClient) : ILoggerAstar<TCategoryName>
 {
     /// <inheritdoc />
     public void LogPageView(string pageName)
