@@ -5,7 +5,7 @@ namespace AStar.Dev.Logging.Extensions.Tests.Unit;
 [TestSubject(typeof(AStarLogger<>))]
 public class AStarLoggerShould
 {
-    private readonly AStarLogger<string> _astLogger;
+    private readonly AStarLogger<string> _astarLogger;
     private readonly ILogger<string>     _mockLogger;
     private readonly ITelemetryClient    _mockTelemetryClient;
 
@@ -13,7 +13,7 @@ public class AStarLoggerShould
     {
         _mockLogger          = Substitute.For<ILogger<string>>();
         _mockTelemetryClient = Substitute.For<ITelemetryClient>();
-        _astLogger           = new(_mockLogger, _mockTelemetryClient);
+        _astarLogger           = new(_mockLogger, null!);
     }
 
     [Fact]
@@ -21,7 +21,7 @@ public class AStarLoggerShould
     {
         const string pageName = "HomePage";
 
-        _astLogger.LogPageView(pageName);
+        _astarLogger.LogPageView(pageName);
 
         _mockLogger.Received(1).Log(
                                     LogLevel.Information,
@@ -40,7 +40,7 @@ public class AStarLoggerShould
         var mockScope = Substitute.For<IDisposable>();
         _mockLogger.BeginScope(state).Returns(mockScope);
 
-        var result = _astLogger.BeginScope(state);
+        var result = _astarLogger.BeginScope(state);
 
         result.ShouldBeSameAs(mockScope);
         _mockLogger.Received(1).BeginScope(state);
@@ -52,7 +52,7 @@ public class AStarLoggerShould
         const LogLevel logLevel = LogLevel.Debug;
         _mockLogger.IsEnabled(logLevel).Returns(true);
 
-        var result = _astLogger.IsEnabled(logLevel);
+        var result = _astarLogger.IsEnabled(logLevel);
 
         result.ShouldBeTrue();
         _mockLogger.Received(1).IsEnabled(logLevel);
@@ -64,7 +64,7 @@ public class AStarLoggerShould
         const LogLevel logLevel = LogLevel.Trace;
         _mockLogger.IsEnabled(logLevel).Returns(false);
 
-        var result = _astLogger.IsEnabled(logLevel);
+        var result = _astarLogger.IsEnabled(logLevel);
 
         result.ShouldBeFalse();
         _mockLogger.Received(1).IsEnabled(logLevel);
@@ -83,7 +83,7 @@ public class AStarLoggerShould
             return s.ToString()!;
         }
 
-        _astLogger.Log(logLevel, eventId, state, exception, (Func<object, Exception?, string>)formatter);
+        _astarLogger.Log(logLevel, eventId, state, exception, (Func<object, Exception?, string>)formatter);
 
         _mockLogger.Received(1).Log(
                                     logLevel,
@@ -106,7 +106,7 @@ public class AStarLoggerShould
             return s.ToString()!;
         }
 
-        _astLogger.Log(logLevel, eventId, state, exception, (Func<object, Exception?, string>)formatter);
+        _astarLogger.Log(logLevel, eventId, state, exception, (Func<object, Exception?, string>)formatter);
 
         _mockLogger.Received(1).Log(
                                     logLevel,
@@ -121,7 +121,7 @@ public class AStarLoggerShould
     {
         string? pageName = null;
 
-        Should.Throw<ArgumentNullException>(() => _astLogger.LogPageView(pageName!));
+        Should.Throw<ArgumentNullException>(() => _astarLogger.LogPageView(pageName!));
 
         _mockLogger.DidNotReceive().Log(
                                         Arg.Any<LogLevel>(),

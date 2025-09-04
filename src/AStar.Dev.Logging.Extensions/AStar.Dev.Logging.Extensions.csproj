@@ -9,9 +9,9 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Authors>AStar Developement, Jason Barden</Authors>
+        <Authors>AStar Development, Jason Barden</Authors>
         <Company>AStar Development</Company>
-        <Copyright>AStar Developement, 2025</Copyright>
+        <Copyright>AStar Development, 2025</Copyright>
         <Description>This package contains extension methods designed to add Serilog and Application Insights to the project. The logging is opinionated but the configuration can be overridden. In addition, Open Telemetry is being incorporated</Description>
         <DocumentationFile>$(AssemblyName).xml</DocumentationFile>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -31,7 +31,7 @@
         <RepositoryUrl>https://github.com/astar-development/astar-dev-logging-extensions.git</RepositoryUrl>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <Title>AStar.Dev.Logging.Extensions</Title>
-        <Version>0.6.2</Version>
+        <Version>0.6.3</Version>
     </PropertyGroup>
 
     <ItemGroup>
